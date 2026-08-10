@@ -2,6 +2,7 @@
 
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { useState, useTransition } from "react";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -27,6 +28,7 @@ export function ProductFilters({
   priceBounds: { min: number; max: number };
   hideCategory?: boolean;
 }) {
+  const t = useTranslations("Shop");
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -52,7 +54,7 @@ export function ProductFilters({
   return (
     <div className="space-y-8">
       <div>
-        <Label className="mb-3 block text-sm font-semibold">Sort by</Label>
+        <Label className="mb-3 block text-sm font-semibold">{t("sortBy")}</Label>
         <Select
           value={sort}
           onValueChange={(value) => updateParams((p) => p.set("sort", value))}
@@ -61,17 +63,17 @@ export function ProductFilters({
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="newest">Newest</SelectItem>
-            <SelectItem value="price-asc">Price: Low to High</SelectItem>
-            <SelectItem value="price-desc">Price: High to Low</SelectItem>
-            <SelectItem value="featured">Featured</SelectItem>
+            <SelectItem value="newest">{t("newest")}</SelectItem>
+            <SelectItem value="price-asc">{t("priceLowHigh")}</SelectItem>
+            <SelectItem value="price-desc">{t("priceHighLow")}</SelectItem>
+            <SelectItem value="featured">{t("featured")}</SelectItem>
           </SelectContent>
         </Select>
       </div>
 
       {!hideCategory && (
         <div>
-          <Label className="mb-3 block text-sm font-semibold">Category</Label>
+          <Label className="mb-3 block text-sm font-semibold">{t("category")}</Label>
           <div className="space-y-2">
             {categories.map((category) => (
               <label key={category.id} className="flex items-center gap-2 text-sm">
@@ -92,7 +94,7 @@ export function ProductFilters({
       )}
 
       <div>
-        <Label className="mb-3 block text-sm font-semibold">Price</Label>
+        <Label className="mb-3 block text-sm font-semibold">{t("price")}</Label>
         <Slider
           min={priceBounds.min}
           max={priceBounds.max}
@@ -123,7 +125,7 @@ export function ProductFilters({
               })
             }
           />
-          In stock only
+          {t("inStockOnly")}
         </label>
       </div>
 
@@ -134,7 +136,7 @@ export function ProductFilters({
         disabled={isPending}
         onClick={() => router.push(pathname)}
       >
-        Clear filters
+        {t("clearFilters")}
       </Button>
     </div>
   );

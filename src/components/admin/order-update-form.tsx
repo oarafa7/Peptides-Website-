@@ -2,6 +2,7 @@
 
 import { useTransition } from "react";
 import { toast } from "sonner";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -28,6 +29,7 @@ export function OrderUpdateForm({
   trackingNumber: string | null;
   trackingCarrier: string | null;
 }) {
+  const t = useTranslations("AdminOrderDetail");
   const [isPending, startTransition] = useTransition();
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -42,9 +44,9 @@ export function OrderUpdateForm({
           trackingNumber: String(formData.get("trackingNumber") ?? ""),
           trackingCarrier: String(formData.get("trackingCarrier") ?? ""),
         });
-        toast.success("Order updated");
+        toast.success(t("updated"));
       } catch {
-        toast.error("Failed to update order");
+        toast.error(t("updateFailed"));
       }
     });
   }
@@ -52,7 +54,7 @@ export function OrderUpdateForm({
   return (
     <form onSubmit={onSubmit} className="space-y-4">
       <div className="space-y-2">
-        <Label htmlFor="status">Fulfillment status</Label>
+        <Label htmlFor="status">{t("statusLabel")}</Label>
         <Select name="status" defaultValue={status}>
           <SelectTrigger id="status">
             <SelectValue />
@@ -67,15 +69,20 @@ export function OrderUpdateForm({
         </Select>
       </div>
       <div className="space-y-2">
-        <Label htmlFor="trackingCarrier">Carrier</Label>
-        <Input id="trackingCarrier" name="trackingCarrier" defaultValue={trackingCarrier ?? ""} placeholder="UPS, FedEx..." />
+        <Label htmlFor="trackingCarrier">{t("carrierLabel")}</Label>
+        <Input
+          id="trackingCarrier"
+          name="trackingCarrier"
+          defaultValue={trackingCarrier ?? ""}
+          placeholder={t("carrierPlaceholder")}
+        />
       </div>
       <div className="space-y-2">
-        <Label htmlFor="trackingNumber">Tracking number</Label>
+        <Label htmlFor="trackingNumber">{t("trackingLabel")}</Label>
         <Input id="trackingNumber" name="trackingNumber" defaultValue={trackingNumber ?? ""} />
       </div>
       <Button type="submit" disabled={isPending} className="w-full">
-        {isPending ? "Saving..." : "Save changes"}
+        {isPending ? t("saving") : t("save")}
       </Button>
     </form>
   );

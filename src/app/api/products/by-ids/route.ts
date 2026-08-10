@@ -1,16 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 
-import { prisma } from "@/lib/prisma";
+import { getProductsByIds } from "@/lib/data/products";
 
 export async function GET(req: NextRequest) {
   const idsParam = req.nextUrl.searchParams.get("ids");
+  const locale = req.nextUrl.searchParams.get("locale") === "ar" ? "ar" : "en";
   if (!idsParam) return NextResponse.json({ products: [] });
 
   const ids = idsParam.split(",").filter(Boolean);
-  const products = await prisma.product.findMany({
-    where: { id: { in: ids } },
-    include: { images: { orderBy: { position: "asc" } }, variants: true, category: true },
-  });
+  const products = await getProductsByIds(ids, locale);
 
   return NextResponse.json({ products });
 }

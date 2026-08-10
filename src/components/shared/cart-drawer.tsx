@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState, useTransition } from "react";
 import { Minus, Plus, ShoppingBag, Trash2, X } from "lucide-react";
 import { toast } from "sonner";
+import { useLocale, useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -15,11 +15,14 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
+import { Link } from "@/i18n/navigation";
 import { useCart, useCartTotals } from "@/lib/store/cart";
 import { cn, formatPrice } from "@/lib/utils";
 import { createCheckoutSession } from "@/lib/actions/checkout";
 
 export function CartDrawer() {
+  const t = useTranslations("Cart");
+  const locale = useLocale();
   const isOpen = useCart((s) => s.isOpen);
   const close = useCart((s) => s.close);
   const items = useCart((s) => s.items);
@@ -54,19 +57,19 @@ export function CartDrawer() {
 
   return (
     <Sheet open={isOpen} onOpenChange={(o) => (o ? useCart.getState().open() : close())}>
-      <SheetContent className="flex w-full flex-col p-0 sm:max-w-md">
+      <SheetContent side={locale === "ar" ? "left" : "right"} className="flex w-full flex-col p-0 sm:max-w-md">
         <SheetHeader className="border-b px-6 py-4">
           <SheetTitle className="flex items-center gap-2">
-            <ShoppingBag className="h-5 w-5" /> Your Cart
+            <ShoppingBag className="h-5 w-5" /> {t("title")}
           </SheetTitle>
         </SheetHeader>
 
         {items.length === 0 ? (
           <div className="flex flex-1 flex-col items-center justify-center gap-3 p-6 text-center">
             <ShoppingBag className="h-10 w-10 text-muted-foreground" />
-            <p className="text-sm text-muted-foreground">Your cart is empty.</p>
+            <p className="text-sm text-muted-foreground">{t("empty")}</p>
             <Button onClick={close} variant="outline">
-              Continue shopping
+              {t("continueShopping")}
             </Button>
           </div>
         ) : (
@@ -137,7 +140,7 @@ export function CartDrawer() {
             <div className="border-t px-6 py-4">
               <div className="mb-3 flex gap-2">
                 <Input
-                  placeholder="Promo code"
+                  placeholder={t("promoCode")}
                   value={couponInput}
                   onChange={(e) => setCouponInput(e.target.value.toUpperCase())}
                 />
@@ -145,15 +148,15 @@ export function CartDrawer() {
                   variant="outline"
                   onClick={() => {
                     setCoupon(couponInput || null);
-                    toast.success(couponInput ? `Applied code ${couponInput}` : "Code cleared");
+                    toast.success(couponInput ? t("codeApplied", { code: couponInput }) : t("codeCleared"));
                   }}
                 >
-                  Apply
+                  {t("apply")}
                 </Button>
               </div>
               {couponCode && (
                 <div className="mb-3 flex items-center justify-between rounded-md bg-accent px-3 py-1.5 text-xs text-accent-foreground">
-                  <span>Code &quot;{couponCode}&quot; will be applied at checkout</span>
+                  <span>{t("codeWillApply", { code: couponCode })}</span>
                   <button onClick={() => setCoupon(null)}>
                     <X className="h-3 w-3" />
                   </button>
@@ -161,15 +164,13 @@ export function CartDrawer() {
               )}
               <Separator className="mb-3" />
               <div className="mb-4 flex items-center justify-between text-sm">
-                <span className="text-muted-foreground">Subtotal</span>
+                <span className="text-muted-foreground">{t("subtotal")}</span>
                 <span className="font-semibold">{formatPrice(subtotalCents)}</span>
               </div>
               <Button className="w-full" size="lg" onClick={handleCheckout} disabled={isPending}>
-                {isPending ? "Redirecting to checkout..." : "Checkout"}
+                {isPending ? t("redirecting") : t("checkout")}
               </Button>
-              <p className="mt-2 text-center text-xs text-muted-foreground">
-                Shipping and taxes calculated at checkout.
-              </p>
+              <p className="mt-2 text-center text-xs text-muted-foreground">{t("shippingTaxes")}</p>
             </div>
           </>
         )}
@@ -184,7 +185,7 @@ export function CartTriggerBadge({ className }: { className?: string }) {
   return (
     <span
       className={cn(
-        "absolute -right-1.5 -top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground",
+        "absolute -end-1.5 -top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground",
         className
       )}
     >

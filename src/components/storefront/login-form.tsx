@@ -2,14 +2,17 @@
 
 import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import Link from "next/link";
 import { signIn } from "next-auth/react";
+import { useLocale, useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Link } from "@/i18n/navigation";
 
 export function LoginForm() {
+  const t = useTranslations("Auth");
+  const locale = useLocale();
   const router = useRouter();
   const searchParams = useSearchParams();
   const [error, setError] = useState<string | null>(null);
@@ -30,11 +33,11 @@ export function LoginForm() {
     setLoading(false);
 
     if (result?.error) {
-      setError("Invalid email or password.");
+      setError(t("invalidCredentials"));
       return;
     }
 
-    const callbackUrl = searchParams.get("callbackUrl") ?? "/account";
+    const callbackUrl = searchParams.get("callbackUrl") ?? `/${locale}/account`;
     router.push(callbackUrl);
     router.refresh();
   }
@@ -42,32 +45,30 @@ export function LoginForm() {
   return (
     <div className="space-y-6">
       <div className="space-y-1 text-center">
-        <h1 className="text-xl font-semibold">Sign in</h1>
-        <p className="text-sm text-muted-foreground">Welcome back to PeptideLab.</p>
+        <h1 className="text-xl font-semibold">{t("signInTitle")}</h1>
+        <p className="text-sm text-muted-foreground">{t("signInSubtitle")}</p>
       </div>
       <form onSubmit={onSubmit} className="space-y-4">
         <div className="space-y-2">
-          <Label htmlFor="email">Email</Label>
+          <Label htmlFor="email">{t("email")}</Label>
           <Input id="email" name="email" type="email" required autoComplete="email" />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="password">Password</Label>
+          <Label htmlFor="password">{t("password")}</Label>
           <Input id="password" name="password" type="password" required autoComplete="current-password" />
         </div>
         {error && <p className="text-sm text-destructive">{error}</p>}
         <Button type="submit" className="w-full" disabled={loading}>
-          {loading ? "Signing in..." : "Sign in"}
+          {loading ? t("signingIn") : t("signIn")}
         </Button>
       </form>
       <p className="text-center text-sm text-muted-foreground">
-        Don&apos;t have an account?{" "}
+        {t("noAccount")}{" "}
         <Link href="/signup" className="font-medium text-primary hover:underline">
-          Create one
+          {t("createOne")}
         </Link>
       </p>
-      <p className="text-center text-xs text-muted-foreground">
-        Demo admin: admin@peptidelab.test / Admin123! &middot; Demo customer: customer@peptidelab.test / Customer123!
-      </p>
+      <p className="text-center text-xs text-muted-foreground">{t("demoAccounts")}</p>
     </div>
   );
 }

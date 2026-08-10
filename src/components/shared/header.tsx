@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
 import { Heart, Menu, ShoppingBag, User } from "lucide-react";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -16,33 +16,36 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { SearchDialog } from "@/components/shared/search-dialog";
 import { CartTriggerBadge } from "@/components/shared/cart-drawer";
+import { LanguageSwitcher } from "@/components/shared/language-switcher";
+import { Link } from "@/i18n/navigation";
 import { useCart } from "@/lib/store/cart";
 import { useWishlist } from "@/lib/store/wishlist";
 import { cn } from "@/lib/utils";
-
-const NAV_LINKS = [
-  { href: "/shop", label: "Shop All" },
-  { href: "/collections/recovery-repair", label: "Recovery" },
-  { href: "/collections/longevity", label: "Longevity" },
-  { href: "/collections/metabolic", label: "Metabolic" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-];
 
 export function Header() {
   const { data: session } = useSession();
   const openCart = useCart((s) => s.open);
   const wishlistCount = useWishlist((s) => s.productIds.length);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const t = useTranslations("Nav");
+
+  const NAV_LINKS = [
+    { href: "/shop", label: t("shopAll") },
+    { href: "/collections/recovery-repair", label: t("recovery") },
+    { href: "/collections/longevity", label: t("longevity") },
+    { href: "/collections/metabolic", label: t("metabolic") },
+    { href: "/about", label: t("about") },
+    { href: "/contact", label: t("contact") },
+  ];
 
   return (
     <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container-page flex h-16 items-center justify-between gap-4">
         <div className="flex items-center gap-2">
           <button
-            className="mr-1 lg:hidden"
+            className="me-1 lg:hidden"
             onClick={() => setMobileOpen((o) => !o)}
-            aria-label="Toggle menu"
+            aria-label={t("menu")}
           >
             <Menu className="h-5 w-5" />
           </button>
@@ -66,11 +69,13 @@ export function Header() {
         <div className="flex items-center gap-1">
           <SearchDialog />
 
-          <Button variant="ghost" size="icon" asChild aria-label="Wishlist" className="relative">
+          <LanguageSwitcher />
+
+          <Button variant="ghost" size="icon" asChild aria-label={t("wishlist")} className="relative">
             <Link href="/wishlist">
               <Heart className="h-5 w-5" />
               {wishlistCount > 0 && (
-                <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground">
+                <span className="absolute -end-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground">
                   {wishlistCount}
                 </span>
               )}
@@ -79,7 +84,7 @@ export function Header() {
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon" aria-label="Account">
+              <Button variant="ghost" size="icon" aria-label={t("account")}>
                 <User className="h-5 w-5" />
               </Button>
             </DropdownMenuTrigger>
@@ -89,35 +94,35 @@ export function Header() {
                   <DropdownMenuLabel>{session.user.name ?? session.user.email}</DropdownMenuLabel>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem asChild>
-                    <Link href="/account">My Account</Link>
+                    <Link href="/account">{t("myAccount")}</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href="/account/orders">Order History</Link>
+                    <Link href="/account/orders">{t("orderHistory")}</Link>
                   </DropdownMenuItem>
                   {session.user.role === "ADMIN" && (
                     <DropdownMenuItem asChild>
-                      <Link href="/admin">Admin Dashboard</Link>
+                      <Link href="/admin">{t("adminDashboard")}</Link>
                     </DropdownMenuItem>
                   )}
                   <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={() => signOut({ callbackUrl: "/" })}>
-                    Sign out
+                    {t("signOut")}
                   </DropdownMenuItem>
                 </>
               ) : (
                 <>
                   <DropdownMenuItem asChild>
-                    <Link href="/login">Sign in</Link>
+                    <Link href="/login">{t("signIn")}</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href="/signup">Create account</Link>
+                    <Link href="/signup">{t("createAccount")}</Link>
                   </DropdownMenuItem>
                 </>
               )}
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Button variant="ghost" size="icon" aria-label="Cart" className="relative" onClick={openCart}>
+          <Button variant="ghost" size="icon" aria-label={t("cart")} className="relative" onClick={openCart}>
             <ShoppingBag className="h-5 w-5" />
             <CartTriggerBadge />
           </Button>

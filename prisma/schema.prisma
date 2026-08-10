@@ -74,8 +74,10 @@ model VerificationToken {
 model Category {
   id          String   @id @default(cuid())
   name        String
+  nameAr      String?
   slug        String   @unique
   description String?
+  descriptionAr String?
   imageUrl    String?
   createdAt   DateTime @default(now())
 
@@ -91,15 +93,19 @@ enum ProductStatus {
 model Product {
   id               String        @id @default(cuid())
   title            String
+  titleAr          String?
   slug             String        @unique
   description      String        @db.Text
+  descriptionAr    String?       @db.Text
   status           ProductStatus @default(DRAFT)
   priceCents       Int
   compareAtCents   Int?
   sku              String?       @unique
   tags             String[]      @default([])
   materials        String?
+  materialsAr      String?
   shippingReturns  String?       @db.Text
+  shippingReturnsAr String?      @db.Text
   isFeatured       Boolean       @default(false)
   stockQuantity    Int           @default(0)
   trackInventory   Boolean       @default(true)
@@ -157,7 +163,9 @@ model Review {
   authorName String
   rating    Int
   title     String?
+  titleAr   String?
   body      String   @db.Text
+  bodyAr    String?  @db.Text
   isApproved Boolean @default(true)
   createdAt DateTime @default(now())
 

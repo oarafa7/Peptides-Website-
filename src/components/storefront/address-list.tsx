@@ -2,6 +2,7 @@
 
 import { useTransition } from "react";
 import { toast } from "sonner";
+import { useTranslations } from "next-intl";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -20,10 +21,11 @@ type Address = {
 };
 
 export function AddressList({ addresses }: { addresses: Address[] }) {
+  const t = useTranslations("Addresses");
   const [isPending, startTransition] = useTransition();
 
   if (addresses.length === 0) {
-    return <p className="text-sm text-muted-foreground">No saved addresses yet.</p>;
+    return <p className="text-sm text-muted-foreground">{t("noAddresses")}</p>;
   }
 
   return (
@@ -32,7 +34,7 @@ export function AddressList({ addresses }: { addresses: Address[] }) {
         <div key={address.id} className="rounded-lg border p-4 text-sm">
           <div className="mb-2 flex items-center justify-between">
             <p className="font-semibold">{address.fullName}</p>
-            {address.isDefault && <Badge variant="secondary">Default</Badge>}
+            {address.isDefault && <Badge variant="secondary">{t("default")}</Badge>}
           </div>
           <p className="text-muted-foreground">{address.line1}</p>
           {address.line2 && <p className="text-muted-foreground">{address.line2}</p>}
@@ -48,11 +50,11 @@ export function AddressList({ addresses }: { addresses: Address[] }) {
             onClick={() =>
               startTransition(async () => {
                 await deleteAddress(address.id);
-                toast.success("Address removed");
+                toast.success(t("removed"));
               })
             }
           >
-            Remove
+            {t("remove")}
           </Button>
         </div>
       ))}

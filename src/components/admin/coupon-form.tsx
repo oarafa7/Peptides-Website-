@@ -2,6 +2,7 @@
 
 import { useRef, useTransition } from "react";
 import { toast } from "sonner";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -16,6 +17,7 @@ import {
 import { createCoupon } from "@/lib/actions/admin-coupons";
 
 export function CouponForm() {
+  const t = useTranslations("AdminCoupons");
   const formRef = useRef<HTMLFormElement>(null);
   const [isPending, startTransition] = useTransition();
 
@@ -25,10 +27,10 @@ export function CouponForm() {
     startTransition(async () => {
       try {
         await createCoupon(formData);
-        toast.success("Coupon created");
+        toast.success(t("created"));
         formRef.current?.reset();
       } catch (err) {
-        toast.error(err instanceof Error ? err.message : "Failed to create coupon");
+        toast.error(err instanceof Error ? err.message : t("createFailed"));
       }
     });
   }
@@ -36,40 +38,40 @@ export function CouponForm() {
   return (
     <form ref={formRef} onSubmit={onSubmit} className="space-y-4">
       <div className="space-y-2">
-        <Label htmlFor="code">Code</Label>
+        <Label htmlFor="code">{t("code")}</Label>
         <Input id="code" name="code" required placeholder="SUMMER20" />
       </div>
       <div className="space-y-2">
-        <Label htmlFor="type">Type</Label>
+        <Label htmlFor="type">{t("type")}</Label>
         <Select name="type" defaultValue="PERCENTAGE">
           <SelectTrigger id="type">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="PERCENTAGE">Percentage off</SelectItem>
-            <SelectItem value="FIXED_AMOUNT">Fixed amount off</SelectItem>
-            <SelectItem value="FREE_SHIPPING">Free shipping</SelectItem>
+            <SelectItem value="PERCENTAGE">{t("percentageOff")}</SelectItem>
+            <SelectItem value="FIXED_AMOUNT">{t("fixedAmountOff")}</SelectItem>
+            <SelectItem value="FREE_SHIPPING">{t("freeShipping")}</SelectItem>
           </SelectContent>
         </Select>
       </div>
       <div className="space-y-2">
-        <Label htmlFor="value">Value (% or cents)</Label>
+        <Label htmlFor="value">{t("value")}</Label>
         <Input id="value" name="value" type="number" min="0" defaultValue={0} />
       </div>
       <div className="space-y-2">
-        <Label htmlFor="minSubtotalCents">Minimum subtotal (cents)</Label>
+        <Label htmlFor="minSubtotalCents">{t("minSubtotal")}</Label>
         <Input id="minSubtotalCents" name="minSubtotalCents" type="number" min="0" />
       </div>
       <div className="space-y-2">
-        <Label htmlFor="usageLimit">Usage limit</Label>
+        <Label htmlFor="usageLimit">{t("usageLimit")}</Label>
         <Input id="usageLimit" name="usageLimit" type="number" min="1" />
       </div>
       <div className="space-y-2">
-        <Label htmlFor="expiresAt">Expires at</Label>
+        <Label htmlFor="expiresAt">{t("expiresAt")}</Label>
         <Input id="expiresAt" name="expiresAt" type="date" />
       </div>
       <Button type="submit" className="w-full" disabled={isPending}>
-        {isPending ? "Creating..." : "Create coupon"}
+        {isPending ? t("creating") : t("create")}
       </Button>
     </form>
   );

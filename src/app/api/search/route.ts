@@ -6,6 +6,7 @@ import { ProductStatus } from "@prisma/client";
 
 export async function GET(req: NextRequest) {
   const q = req.nextUrl.searchParams.get("q")?.trim() ?? "";
+  const locale = req.nextUrl.searchParams.get("locale") === "ar" ? "ar" : "en";
 
   if (!q) {
     return NextResponse.json({ results: [] });
@@ -16,6 +17,7 @@ export async function GET(req: NextRequest) {
     select: {
       id: true,
       title: true,
+      titleAr: true,
       slug: true,
       priceCents: true,
       tags: true,
@@ -24,7 +26,16 @@ export async function GET(req: NextRequest) {
     take: 500,
   });
 
-  const fuse = new Fuse(products, {
+  const localized = products.map((p) => ({
+    id: p.id,
+    title: locale === "ar" && p.titleAr ? p.titleAr : p.title,
+    slug: p.slug,
+    priceCents: p.priceCents,
+    tags: p.tags,
+    images: p.images,
+  }));
+
+  const fuse = new Fuse(localized, {
     keys: ["title", "tags"],
     threshold: 0.35,
   });

@@ -1,9 +1,10 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
 import { z } from "zod";
+import { getLocale } from "next-intl/server";
 
+import { redirect } from "@/i18n/navigation";
 import { prisma } from "@/lib/prisma";
 import { slugify } from "@/lib/utils";
 import { requireAdmin } from "@/lib/actions/guard";
@@ -26,13 +27,17 @@ const imageSchema = z.object({
 const productSchema = z.object({
   title: z.string().min(1, "Title is required"),
   description: z.string().min(1, "Description is required"),
+  titleAr: z.string().optional(),
+  descriptionAr: z.string().optional(),
   status: z.enum(["DRAFT", "ACTIVE", "ARCHIVED"]),
   priceCents: z.coerce.number().int().nonnegative(),
   compareAtCents: z.coerce.number().int().nonnegative().optional(),
   categoryId: z.string().optional(),
   tags: z.string().optional(),
   materials: z.string().optional(),
+  materialsAr: z.string().optional(),
   shippingReturns: z.string().optional(),
+  shippingReturnsAr: z.string().optional(),
   isFeatured: z.coerce.boolean().optional(),
   trackInventory: z.coerce.boolean().optional(),
   stockQuantity: z.coerce.number().int().nonnegative().default(0),
@@ -58,13 +63,17 @@ export async function upsertProduct(productId: string | null, input: ProductForm
   const data = {
     title: parsed.title,
     description: parsed.description,
+    titleAr: parsed.titleAr || null,
+    descriptionAr: parsed.descriptionAr || null,
     status: parsed.status,
     priceCents: parsed.priceCents,
     compareAtCents: parsed.compareAtCents || null,
     categoryId: parsed.categoryId || null,
     tags,
     materials: parsed.materials || null,
+    materialsAr: parsed.materialsAr || null,
     shippingReturns: parsed.shippingReturns || null,
+    shippingReturnsAr: parsed.shippingReturnsAr || null,
     isFeatured: !!parsed.isFeatured,
     trackInventory: parsed.trackInventory ?? true,
     stockQuantity,
@@ -128,15 +137,20 @@ export async function upsertProduct(productId: string | null, input: ProductForm
     }
   }
 
-  revalidatePath("/admin/products");
-  revalidatePath("/shop");
-  revalidatePath(`/products/${product.slug}`);
+  for (const locale of ["en", "ar"]) {
+    revalidatePath(`/${locale}/admin/products`);
+    revalidatePath(`/${locale}/shop`);
+    revalidatePath(`/${locale}/products/${product.slug}`);
+  }
 
-  redirect("/admin/products");
+  const locale = await getLocale();
+  redirect({ href: "/admin/products", locale });
 }
 
 export async function deleteProduct(productId: string) {
   await requireAdmin();
   await prisma.product.delete({ where: { id: productId } });
-  revalidatePath("/admin/products");
+  for (const locale of ["en", "ar"]) {
+    revalidatePath(`/${locale}/admin/products`);
+  }
 }

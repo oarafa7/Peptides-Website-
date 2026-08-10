@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { Minus, Plus } from "lucide-react";
 import { toast } from "sonner";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { cn, formatPrice } from "@/lib/utils";
@@ -26,6 +27,7 @@ export function AddToCart({
   variants: Variant[];
   primaryImage: string | null;
 }) {
+  const t = useTranslations("Product");
   const [selectedVariantId, setSelectedVariantId] = useState(variants[0]?.id ?? null);
   const [quantity, setQuantity] = useState(1);
   const addItem = useCart((s) => s.addItem);
@@ -36,7 +38,16 @@ export function AddToCart({
   const stock = selectedVariant ? selectedVariant.stockQuantity : product.stockQuantity;
   const inStock = !product.trackInventory || stock > 0;
 
-  const optionName = useMemo(() => variants[0]?.option1Name ?? "Option", [variants]);
+  const optionName = useMemo(() => {
+    const raw = variants[0]?.option1Name;
+    if (!raw) return t("option");
+    const known: Record<string, string> = {
+      Size: t("size"),
+      Pack: t("pack"),
+      Color: t("color"),
+    };
+    return known[raw] ?? raw;
+  }, [variants, t]);
 
   function handleAdd() {
     addItem(
@@ -52,7 +63,7 @@ export function AddToCart({
       },
       quantity
     );
-    toast.success(`${product.title} added to cart`);
+    toast.success(t("addedToCart", { title: product.title }));
     openCart();
   }
 
@@ -102,11 +113,11 @@ export function AddToCart({
           </button>
         </div>
         <Button size="lg" className="flex-1" disabled={!inStock} onClick={handleAdd}>
-          {inStock ? "Add to Cart" : "Sold Out"}
+          {inStock ? t("addToCart") : t("soldOut")}
         </Button>
       </div>
       {product.trackInventory && stock > 0 && stock <= 10 && (
-        <p className="text-xs text-amber-600">Only {stock} left in stock</p>
+        <p className="text-xs text-amber-600">{t("onlyXLeft", { count: stock })}</p>
       )}
     </div>
   );

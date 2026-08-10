@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Search } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
 
 import {
   Dialog,
@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "@/i18n/navigation";
 import { formatPrice } from "@/lib/utils";
 
 type SearchResult = {
@@ -23,6 +24,9 @@ type SearchResult = {
 };
 
 export function SearchDialog() {
+  const t = useTranslations("Search");
+  const tNav = useTranslations("Nav");
+  const locale = useLocale();
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
@@ -36,13 +40,13 @@ export function SearchDialog() {
     }
     setLoading(true);
     const timeout = setTimeout(async () => {
-      const res = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
+      const res = await fetch(`/api/search?q=${encodeURIComponent(query)}&locale=${locale}`);
       const data = await res.json();
       setResults(data.results ?? []);
       setLoading(false);
     }, 250);
     return () => clearTimeout(timeout);
-  }, [query]);
+  }, [query, locale]);
 
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
@@ -63,32 +67,32 @@ export function SearchDialog() {
 
   return (
     <>
-      <Button variant="ghost" size="icon" aria-label="Search" onClick={() => setOpen(true)}>
+      <Button variant="ghost" size="icon" aria-label={tNav("search")} onClick={() => setOpen(true)}>
         <Search className="h-5 w-5" />
       </Button>
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="top-[20%] max-w-lg translate-y-0 gap-0 p-0">
-          <DialogTitle className="sr-only">Search products</DialogTitle>
+          <DialogTitle className="sr-only">{tNav("search")}</DialogTitle>
           <div className="flex items-center border-b px-4">
-            <Search className="mr-2 h-4 w-4 shrink-0 text-muted-foreground" />
+            <Search className="me-2 h-4 w-4 shrink-0 text-muted-foreground" />
             <Input
               autoFocus
-              placeholder="Search products..."
+              placeholder={t("placeholder")}
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               className="border-0 shadow-none focus-visible:ring-0"
             />
           </div>
           <div className="max-h-80 overflow-y-auto p-2">
-            {loading && <p className="p-4 text-sm text-muted-foreground">Searching...</p>}
+            {loading && <p className="p-4 text-sm text-muted-foreground">{t("searching")}</p>}
             {!loading && query && results.length === 0 && (
-              <p className="p-4 text-sm text-muted-foreground">No products found for &quot;{query}&quot;.</p>
+              <p className="p-4 text-sm text-muted-foreground">{t("noResults", { query })}</p>
             )}
             {results.map((r) => (
               <button
                 key={r.id}
                 onClick={() => goTo(r.slug)}
-                className="flex w-full items-center gap-3 rounded-md p-2 text-left hover:bg-accent"
+                className="flex w-full items-center gap-3 rounded-md p-2 text-start hover:bg-accent"
               >
                 <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-md bg-muted">
                   {r.images[0] && (

@@ -32,6 +32,10 @@ yarn-error.log*
 # prisma
 /prisma/dev.db
 
+# uploaded product images (local dev storage)
+/public/uploads/products/*
+!/public/uploads/products/.gitkeep
+
 # vercel
 .vercel
 

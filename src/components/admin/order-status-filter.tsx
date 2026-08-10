@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 import {
   Select,
@@ -9,10 +9,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useRouter } from "@/i18n/navigation";
 
 const STATUSES = ["PENDING", "PAID", "UNFULFILLED", "FULFILLED", "SHIPPED", "DELIVERED", "CANCELLED", "REFUNDED"];
 
 export function OrderStatusFilter({ current }: { current?: string }) {
+  const t = useTranslations("AdminOrders");
   const router = useRouter();
 
   return (
@@ -24,7 +26,7 @@ export function OrderStatusFilter({ current }: { current?: string }) {
         <SelectValue />
       </SelectTrigger>
       <SelectContent>
-        <SelectItem value="ALL">All statuses</SelectItem>
+        <SelectItem value="ALL">{t("allStatuses")}</SelectItem>
         {STATUSES.map((status) => (
           <SelectItem key={status} value={status}>
             {status}
