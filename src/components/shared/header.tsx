@@ -17,6 +17,7 @@ import {
 import { SearchDialog } from "@/components/shared/search-dialog";
 import { CartTriggerBadge } from "@/components/shared/cart-drawer";
 import { LanguageSwitcher } from "@/components/shared/language-switcher";
+import { Logo } from "@/components/shared/logo";
 import { Link } from "@/i18n/navigation";
 import { useCart } from "@/lib/store/cart";
 import { useWishlist } from "@/lib/store/wishlist";
@@ -49,9 +50,7 @@ export function Header() {
           >
             <Menu className="h-5 w-5" />
           </button>
-          <Link href="/" className="font-display text-xl font-semibold tracking-tight">
-            PEPTIDE<span className="text-primary">LAB</span>
-          </Link>
+          <Logo textClassName="hidden sm:inline text-lg" />
         </div>
 
         <nav className="hidden items-center gap-6 lg:flex">

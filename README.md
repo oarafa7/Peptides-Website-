@@ -1,11 +1,11 @@
-# PeptideLab — E-Commerce Storefront
+# Marwan Mohsen Supplements — E-Commerce Storefront
 
 A full-stack e-commerce website built with Next.js 14 (App Router), Prisma/PostgreSQL,
 NextAuth, Tailwind CSS + shadcn-style UI, Stripe Checkout, an admin console, and a
 bilingual English/Arabic storefront with full RTL support.
 
 Products, pricing, and copy are placeholder demo content for a fictional research-peptide
-brand ("PeptideLab") — swap in real inventory before launching.
+brand ("Marwan Mohsen Supplements") — swap in real inventory before launching.
 
 ## Tech Stack
 
@@ -56,8 +56,8 @@ This creates the schema and seeds:
 - 5 categories, 10 demo products (with variants, images, reviews) — each with English
   **and Arabic** title/description/materials/shipping copy
 - 2 coupons: `WELCOME10` (10% off) and `FREESHIP` (free shipping over $100)
-- An admin account: **admin@peptidelab.test / Admin123!**
-- A customer account: **customer@peptidelab.test / Customer123!**
+- An admin account: **admin@marwanmohsen.test / Admin123!**
+- A customer account: **customer@marwanmohsen.test / Customer123!**
 
 ### 4. Run the dev server
 

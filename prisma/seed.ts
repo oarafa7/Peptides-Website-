@@ -392,11 +392,11 @@ async function main() {
   console.log("Seeding admin + demo customer...");
   const adminPassword = await bcrypt.hash("Admin123!", 10);
   await prisma.user.upsert({
-    where: { email: "admin@peptidelab.test" },
+    where: { email: "admin@marwanmohsen.test" },
     update: {},
     create: {
       name: "Store Admin",
-      email: "admin@peptidelab.test",
+      email: "admin@marwanmohsen.test",
       passwordHash: adminPassword,
       role: Role.ADMIN,
     },
@@ -404,11 +404,11 @@ async function main() {
 
   const customerPassword = await bcrypt.hash("Customer123!", 10);
   await prisma.user.upsert({
-    where: { email: "customer@peptidelab.test" },
+    where: { email: "customer@marwanmohsen.test" },
     update: {},
     create: {
       name: "Demo Customer",
-      email: "customer@peptidelab.test",
+      email: "customer@marwanmohsen.test",
       passwordHash: customerPassword,
       role: Role.CUSTOMER,
     },

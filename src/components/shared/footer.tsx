@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 
 import { Link } from "@/i18n/navigation";
+import { Logo } from "@/components/shared/logo";
 
 export function Footer() {
   const t = useTranslations("Footer");
@@ -10,9 +11,7 @@ export function Footer() {
     <footer className="mt-24 border-t bg-muted/30">
       <div className="container-page grid gap-10 py-14 md:grid-cols-4">
         <div>
-          <Link href="/" className="font-display text-xl font-semibold tracking-tight">
-            PEPTIDE<span className="text-primary">LAB</span>
-          </Link>
+          <Logo imgClassName="h-11" textClassName="text-lg" />
           <p className="mt-3 max-w-xs text-sm text-muted-foreground">{t("description")}</p>
         </div>
 

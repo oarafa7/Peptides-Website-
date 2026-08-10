@@ -5,6 +5,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { authOptions } from "@/lib/auth";
 import { AdminSignOut } from "@/components/admin/sign-out-button";
 import { LanguageSwitcher } from "@/components/shared/language-switcher";
+import { Logo } from "@/components/shared/logo";
 import { Link, redirect } from "@/i18n/navigation";
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
@@ -29,14 +30,12 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   return (
     <div className="flex min-h-screen">
       <aside className="hidden w-64 shrink-0 border-r bg-muted/20 lg:flex lg:flex-col">
-        <div className="flex items-center justify-between border-b p-6">
-          <div>
-            <Link href="/admin" className="font-display text-lg font-semibold">
-              PEPTIDE<span className="text-primary">LAB</span>
-            </Link>
-            <p className="mt-0.5 text-xs text-muted-foreground">{t("consoleLabel")}</p>
+        <div className="border-b p-6">
+          <div className="flex items-center justify-between gap-2">
+            <Logo imgClassName="h-8" textClassName="text-sm leading-tight" />
+            <LanguageSwitcher />
           </div>
-          <LanguageSwitcher />
+          <p className="mt-2 text-xs text-muted-foreground">{t("consoleLabel")}</p>
         </div>
         <nav className="flex-1 space-y-1 p-4">
           {NAV.map((item) => (

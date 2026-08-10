@@ -1,7 +1,7 @@
 {
   "Meta": {
-    "brand": "PeptideLab",
-    "titleDefault": "PeptideLab | Research-Grade Peptides",
+    "brand": "Marwan Mohsen Supplements",
+    "titleDefault": "Marwan Mohsen Supplements | Research-Grade Peptides",
     "description": "Third-party tested research peptides, cold-chain shipped with a certificate of analysis on every order. For laboratory research use only."
   },
   "Announcement": {
@@ -60,7 +60,7 @@
     "shippingReturns": "Shipping & Returns",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
-    "copyright": "© {year} PeptideLab. All rights reserved. Products sold for research purposes only.",
+    "copyright": "© {year} Marwan Mohsen Supplements. All rights reserved. Products sold for research purposes only.",
     "recoveryRepair": "Recovery & Repair",
     "longevity": "Longevity",
     "metabolic": "Metabolic"
@@ -129,7 +129,7 @@
   },
   "Auth": {
     "signInTitle": "Sign in",
-    "signInSubtitle": "Welcome back to PeptideLab.",
+    "signInSubtitle": "Welcome back to Marwan Mohsen Supplements.",
     "email": "Email",
     "password": "Password",
     "signIn": "Sign in",
@@ -137,7 +137,7 @@
     "invalidCredentials": "Invalid email or password.",
     "noAccount": "Don't have an account?",
     "createOne": "Create one",
-    "demoAccounts": "Demo admin: admin@peptidelab.test / Admin123! · Demo customer: customer@peptidelab.test / Customer123!",
+    "demoAccounts": "Demo admin: admin@marwanmohsen.test / Admin123! · Demo customer: customer@marwanmohsen.test / Customer123!",
     "signUpTitle": "Create an account",
     "signUpSubtitle": "Track orders and save your details.",
     "fullName": "Full name",
@@ -222,8 +222,8 @@
     "viewOrderHistory": "View order history"
   },
   "About": {
-    "title": "About PeptideLab",
-    "p1": "PeptideLab was founded to give researchers a reliable, transparent source of high-purity peptides. Every production batch is independently verified via HPLC and mass spectrometry, and a Certificate of Analysis ships with every order.",
+    "title": "About Marwan Mohsen Supplements",
+    "p1": "Marwan Mohsen Supplements was founded to give researchers a reliable, transparent source of high-purity peptides. Every production batch is independently verified via HPLC and mass spectrometry, and a Certificate of Analysis ships with every order.",
     "p2": "We work exclusively with accredited manufacturing partners and cold-chain logistics providers to preserve compound integrity from production to your door.",
     "p3": "All products are sold strictly for laboratory research purposes and are not intended for human or veterinary use, diagnosis, treatment, or consumption."
   },
@@ -247,9 +247,9 @@
     "privacyP2": "We use your information solely to fulfill orders, provide customer support, and send order-related communications. We do not sell your personal information to third parties.",
     "privacyP3": "You may request a copy of your data or ask us to delete your account at any time by contacting us.",
     "termsTitle": "Terms of Service",
-    "termsP1": "By purchasing from PeptideLab, you confirm that you are acquiring products strictly for laboratory research purposes and agree that they are not for human or veterinary use, diagnosis, treatment, cure, or prevention of any disease.",
+    "termsP1": "By purchasing from Marwan Mohsen Supplements, you confirm that you are acquiring products strictly for laboratory research purposes and agree that they are not for human or veterinary use, diagnosis, treatment, cure, or prevention of any disease.",
     "termsP2": "You must be at least 18 years old and legally permitted to purchase research chemicals in your jurisdiction. It is your responsibility to comply with local laws and institutional handling requirements.",
-    "termsP3": "All sales are subject to the shipping and returns policy. PeptideLab reserves the right to refuse service to anyone believed to be purchasing for prohibited use."
+    "termsP3": "All sales are subject to the shipping and returns policy. Marwan Mohsen Supplements reserves the right to refuse service to anyone believed to be purchasing for prohibited use."
   },
   "Language": {
     "label": "Language",

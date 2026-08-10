@@ -79,7 +79,7 @@ export const useCart = create<CartState>()(
       setCoupon: (code) => set({ couponCode: code }),
       clear: () => set({ items: [], couponCode: null }),
     }),
-    { name: "peptidelab-cart" }
+    { name: "marwan-mohsen-cart" }
   )
 );
 
