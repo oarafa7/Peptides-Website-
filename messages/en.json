@@ -1,17 +1,17 @@
 {
   "Meta": {
     "brand": "Marwan Mohsen Supplements",
-    "titleDefault": "Marwan Mohsen Supplements | Research-Grade Peptides",
-    "description": "Third-party tested research peptides, cold-chain shipped with a certificate of analysis on every order. For laboratory research use only."
+    "titleDefault": "Marwan Mohsen Supplements | Premium Sports Nutrition",
+    "description": "Protein, pre-workout, vitamins, and gym essentials — lab-tested for quality and shipped fast so you can keep training."
   },
   "Announcement": {
-    "text": "Free shipping on all orders over $100 · For laboratory research use only"
+    "text": "Free shipping on all orders over $75 · Lab-tested for quality and purity"
   },
   "Nav": {
     "shopAll": "Shop All",
-    "recovery": "Recovery",
-    "longevity": "Longevity",
-    "metabolic": "Metabolic",
+    "protein": "Protein & Mass",
+    "preWorkout": "Pre-Workout",
+    "vitamins": "Vitamins",
     "about": "About",
     "contact": "Contact",
     "search": "Search",
@@ -27,30 +27,30 @@
     "menu": "Toggle menu"
   },
   "Hero": {
-    "badge": "Third-party tested · >99% purity",
-    "title": "Research-grade peptides, verified batch by batch.",
-    "description": "Cold-chain shipped, independently lab-tested, and backed by a certificate of analysis with every order. For laboratory research use only.",
+    "badge": "Lab-tested · Trusted by thousands of athletes",
+    "title": "Fuel your training. Trust what's in every scoop.",
+    "description": "Premium protein, pre-workout, and wellness essentials — third-party lab-tested for quality and shipped fast to your door.",
     "shopAll": "Shop All Products",
-    "learnMore": "Learn About Our Testing"
+    "learnMore": "Learn About Our Quality Standards"
   },
   "Home": {
-    "hplcTitle": "HPLC Verified",
-    "hplcDesc": "Every batch tested >99% purity",
-    "coldChainTitle": "Cold-Chain Shipping",
-    "coldChainDesc": "Insulated, temperature-controlled",
-    "coaTitle": "Certificate of Analysis",
-    "coaDesc": "Included with every order",
+    "labTestedTitle": "Lab-Tested Quality",
+    "labTestedDesc": "Every batch checked for purity",
+    "fastShippingTitle": "Fast, Free Shipping",
+    "fastShippingDesc": "Free on orders over $75",
+    "guaranteeTitle": "Satisfaction Guarantee",
+    "guaranteeDesc": "30-day money-back guarantee",
     "featuredTitle": "Featured Products",
-    "featuredSubtitle": "Our most-requested research compounds.",
+    "featuredSubtitle": "Our best-selling supplements, hand-picked for results.",
     "viewAll": "View all",
     "categoriesTitle": "Shop by Category",
     "productsCount": "{count, plural, one {# product} other {# products}}",
-    "ctaTitle": "Every order ships with a Certificate of Analysis",
-    "ctaDescription": "We test every production batch via independent third-party HPLC and mass spectrometry labs so you can trust what's in the vial.",
+    "ctaTitle": "Backed by a 30-day money-back guarantee",
+    "ctaDescription": "If a product isn't right for you, we'll make it right — no questions asked within 30 days of delivery.",
     "ctaButton": "Browse the catalog"
   },
   "Footer": {
-    "description": "Third-party tested research peptides, shipped cold-chain. For laboratory research use only — not for human consumption.",
+    "description": "Premium protein, pre-workout, and wellness supplements — lab-tested for quality and shipped fast.",
     "shop": "Shop",
     "company": "Company",
     "legal": "Legal",
@@ -60,10 +60,10 @@
     "shippingReturns": "Shipping & Returns",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
-    "copyright": "© {year} Marwan Mohsen Supplements. All rights reserved. Products sold for research purposes only.",
-    "recoveryRepair": "Recovery & Repair",
-    "longevity": "Longevity",
-    "metabolic": "Metabolic"
+    "copyright": "© {year} Marwan Mohsen Supplements. All rights reserved.",
+    "proteinMass": "Protein & Mass",
+    "preWorkoutEnergy": "Pre-Workout & Energy",
+    "vitaminsWellness": "Vitamins & Wellness"
   },
   "Product": {
     "addToCart": "Add to Cart",
@@ -74,6 +74,8 @@
     "size": "Size",
     "pack": "Pack",
     "color": "Color",
+    "flavor": "Flavor",
+    "count": "Count",
     "option": "Option",
     "description": "Description",
     "materials": "Materials & Details",
@@ -223,9 +225,9 @@
   },
   "About": {
     "title": "About Marwan Mohsen Supplements",
-    "p1": "Marwan Mohsen Supplements was founded to give researchers a reliable, transparent source of high-purity peptides. Every production batch is independently verified via HPLC and mass spectrometry, and a Certificate of Analysis ships with every order.",
-    "p2": "We work exclusively with accredited manufacturing partners and cold-chain logistics providers to preserve compound integrity from production to your door.",
-    "p3": "All products are sold strictly for laboratory research purposes and are not intended for human or veterinary use, diagnosis, treatment, or consumption."
+    "p1": "Marwan Mohsen Supplements was founded by athletes, for athletes — to make it simple to find protein, pre-workout, and everyday wellness products you can actually trust. Every formula is manufactured in a GMP-certified facility and checked by an independent lab before it ships.",
+    "p2": "We work directly with accredited manufacturers to keep our supply chain short and our pricing fair, so you get premium quality without the premium markup.",
+    "p3": "Whether you're chasing a new personal record or just trying to build a healthier daily routine, our team is here to help you find the right products for your goals."
   },
   "Contact": {
     "title": "Contact Us",
@@ -239,17 +241,17 @@
   },
   "Policies": {
     "shippingTitle": "Shipping & Returns",
-    "shippingP1": "Orders ship within 1-2 business days via insulated, cold-chain courier. Standard shipping typically arrives within 2-5 business days.",
-    "shippingP2": "Because our products are temperature-sensitive research compounds, we accept returns only on unopened, sealed vials within 30 days of delivery. Damaged or incorrect items are replaced free of charge — contact us with your order number and photos of the shipment.",
+    "shippingP1": "Orders ship within 1-2 business days via tracked courier. Standard shipping typically arrives within 2-5 business days, with free shipping on all orders over $75.",
+    "shippingP2": "We accept returns on unopened items in their original packaging within 30 days of delivery. Damaged or incorrect items are replaced free of charge — contact us with your order number and photos of the shipment.",
     "shippingP3": "Refunds are issued to the original payment method within 5-10 business days of the return being received and inspected.",
     "privacyTitle": "Privacy Policy",
     "privacyP1": "We collect the information you provide when creating an account or placing an order — name, email, shipping address, and order history. Payment details are processed directly by Stripe and are never stored on our servers.",
     "privacyP2": "We use your information solely to fulfill orders, provide customer support, and send order-related communications. We do not sell your personal information to third parties.",
     "privacyP3": "You may request a copy of your data or ask us to delete your account at any time by contacting us.",
     "termsTitle": "Terms of Service",
-    "termsP1": "By purchasing from Marwan Mohsen Supplements, you confirm that you are acquiring products strictly for laboratory research purposes and agree that they are not for human or veterinary use, diagnosis, treatment, cure, or prevention of any disease.",
-    "termsP2": "You must be at least 18 years old and legally permitted to purchase research chemicals in your jurisdiction. It is your responsibility to comply with local laws and institutional handling requirements.",
-    "termsP3": "All sales are subject to the shipping and returns policy. Marwan Mohsen Supplements reserves the right to refuse service to anyone believed to be purchasing for prohibited use."
+    "termsP1": "By purchasing from Marwan Mohsen Supplements, you agree to these terms of service. Products are intended for healthy adults; consult your physician before use if you are pregnant, nursing, taking medication, or have a medical condition. These statements have not been evaluated by the FDA. Our products are not intended to diagnose, treat, cure, or prevent any disease.",
+    "termsP2": "You must be at least 18 years old to purchase from our store. It is your responsibility to follow the usage instructions on each product's label.",
+    "termsP3": "All sales are subject to our shipping and returns policy. Marwan Mohsen Supplements reserves the right to refuse service at our discretion."
   },
   "Language": {
     "label": "Language",

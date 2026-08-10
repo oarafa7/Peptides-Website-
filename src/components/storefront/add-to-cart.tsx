@@ -45,6 +45,8 @@ export function AddToCart({
       Size: t("size"),
       Pack: t("pack"),
       Color: t("color"),
+      Flavor: t("flavor"),
+      Count: t("count"),
     };
     return known[raw] ?? raw;
   }, [variants, t]);

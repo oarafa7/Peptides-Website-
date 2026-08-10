@@ -1,4 +1,4 @@
-import { ArrowRight, FlaskConical, ShieldCheck, Snowflake } from "lucide-react";
+import { ArrowRight, BadgeCheck, ShieldCheck, Truck } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 
 import { Hero } from "@/components/storefront/hero";
@@ -23,24 +23,24 @@ export default async function HomePage() {
       <section className="border-b bg-background py-10">
         <div className="container-page grid grid-cols-1 gap-8 sm:grid-cols-3">
           <div className="flex items-center gap-3">
-            <FlaskConical className="h-8 w-8 text-primary" />
+            <BadgeCheck className="h-8 w-8 text-primary" />
             <div>
-              <p className="text-sm font-semibold">{t("hplcTitle")}</p>
-              <p className="text-xs text-muted-foreground">{t("hplcDesc")}</p>
+              <p className="text-sm font-semibold">{t("labTestedTitle")}</p>
+              <p className="text-xs text-muted-foreground">{t("labTestedDesc")}</p>
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <Snowflake className="h-8 w-8 text-primary" />
+            <Truck className="h-8 w-8 text-primary" />
             <div>
-              <p className="text-sm font-semibold">{t("coldChainTitle")}</p>
-              <p className="text-xs text-muted-foreground">{t("coldChainDesc")}</p>
+              <p className="text-sm font-semibold">{t("fastShippingTitle")}</p>
+              <p className="text-xs text-muted-foreground">{t("fastShippingDesc")}</p>
             </div>
           </div>
           <div className="flex items-center gap-3">
             <ShieldCheck className="h-8 w-8 text-primary" />
             <div>
-              <p className="text-sm font-semibold">{t("coaTitle")}</p>
-              <p className="text-xs text-muted-foreground">{t("coaDesc")}</p>
+              <p className="text-sm font-semibold">{t("guaranteeTitle")}</p>
+              <p className="text-xs text-muted-foreground">{t("guaranteeDesc")}</p>
             </div>
           </div>
         </div>

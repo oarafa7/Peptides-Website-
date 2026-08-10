@@ -5,282 +5,313 @@ const prisma = new PrismaClient();
 
 const categories = [
   {
-    name: "Recovery & Repair",
-    nameAr: "التعافي والإصلاح",
-    slug: "recovery-repair",
-    description: "Formulated for post-training recovery and tissue support research.",
-    descriptionAr: "مصمم لأبحاث التعافي بعد التدريب ودعم الأنسجة.",
+    name: "Protein & Mass",
+    nameAr: "البروتين وزيادة الكتلة",
+    slug: "protein-mass",
+    description: "Whey isolates and mass gainers to fuel muscle growth and recovery.",
+    descriptionAr: "بروتين مصل اللبن المعزول ومكملات زيادة الكتلة لدعم نمو العضلات والتعافي.",
   },
   {
-    name: "Longevity",
-    nameAr: "طول العمر",
-    slug: "longevity",
-    description: "Research compounds studied for cellular aging and longevity.",
-    descriptionAr: "مركبات بحثية تُدرس لأبحاث الشيخوخة الخلوية وطول العمر.",
+    name: "Pre-Workout & Energy",
+    nameAr: "ما قبل التمرين والطاقة",
+    slug: "pre-workout-energy",
+    description: "Explosive energy, sharp focus, and better pumps for your best training sessions.",
+    descriptionAr: "طاقة انفجارية وتركيز عالٍ وضخ عضلي أفضل لأفضل جلسات تدريبك.",
   },
   {
-    name: "Metabolic",
-    nameAr: "الأيض",
-    slug: "metabolic",
-    description: "Compounds researched for metabolic and body-composition studies.",
-    descriptionAr: "مركبات تُبحث لدراسات الأيض وتركيب الجسم.",
+    name: "Vitamins & Wellness",
+    nameAr: "الفيتامينات والعافية",
+    slug: "vitamins-wellness",
+    description: "Everyday essentials to support immunity, energy, and overall health.",
+    descriptionAr: "أساسيات يومية لدعم المناعة والطاقة والصحة العامة.",
   },
   {
-    name: "Cognitive",
-    nameAr: "الإدراك",
-    slug: "cognitive",
-    description: "Nootropic-adjacent peptides studied for cognitive support.",
-    descriptionAr: "ببتيدات قريبة من المنشطات الذهنية تُدرس لدعم الوظائف الإدراكية.",
+    name: "Weight Management",
+    nameAr: "إدارة الوزن",
+    slug: "weight-management",
+    description: "Science-backed formulas to support your fat-loss and metabolism goals.",
+    descriptionAr: "تركيبات مدعومة علميًا لدعم أهدافك في حرق الدهون وتحسين الأيض.",
   },
   {
     name: "Accessories",
     nameAr: "الملحقات",
     slug: "accessories",
-    description: "Bac water, syringes, vials, and lab accessories.",
-    descriptionAr: "ماء مضاد للجراثيم، حقن، قوارير، وملحقات مخبرية.",
+    description: "Gear and essentials that make every workout easier.",
+    descriptionAr: "معدات وأساسيات تجعل كل تمرين أسهل.",
   },
 ];
 
 const products = [
   {
-    title: "BPC-157 Research Blend",
-    titleAr: "خليط BPC-157 البحثي",
-    slug: "bpc-157-research-blend",
+    title: "Gold Whey Protein Isolate",
+    titleAr: "بروتين مصل اللبن المعزول الذهبي",
+    slug: "gold-whey-protein-isolate",
     description:
-      "A high-purity BPC-157 lyophilized peptide blend, third-party tested to >99% purity via HPLC. Supplied for laboratory research use only.",
+      "25g of fast-absorbing whey protein isolate per scoop, with minimal fat and sugar. Perfect for post-workout recovery or any time you need a clean protein boost.",
     descriptionAr:
-      "خليط ببتيد BPC-157 مجفف بالتجميد وعالي النقاء، مختبَر من طرف ثالث بنقاء أكثر من 99% عبر تقنية HPLC. يُورَّد للاستخدام البحثي المخبري فقط.",
-    priceCents: 5900,
-    compareAtCents: 7200,
-    categorySlug: "recovery-repair",
-    tags: ["bestseller", "recovery"],
+      "25 جرامًا من بروتين مصل اللبن المعزول سريع الامتصاص في كل مغرفة، بأقل نسبة من الدهون والسكر. مثالي للتعافي بعد التمرين أو في أي وقت تحتاج فيه إلى جرعة بروتين نظيفة.",
+    priceCents: 3999,
+    compareAtCents: 4999,
+    categorySlug: "protein-mass",
+    tags: ["bestseller", "protein"],
     isFeatured: true,
-    materials: "Lyophilized peptide powder, sealed glass vial.",
-    materialsAr: "مسحوق ببتيد مجفف بالتجميد، قارورة زجاجية محكمة الغلق.",
+    materials: "Whey protein isolate, natural and artificial flavors, sunflower lecithin, stevia leaf extract.",
+    materialsAr: "بروتين مصل اللبن المعزول، نكهات طبيعية واصطناعية، ليسيثين دوار الشمس، مستخلص أوراق الستيفيا.",
     variants: [
-      { name: "5mg", option1Name: "Size", option1Value: "5mg", priceCents: 5900, stockQuantity: 42 },
-      { name: "10mg", option1Name: "Size", option1Value: "10mg", priceCents: 9900, stockQuantity: 30 },
+      { name: "Chocolate", option1Name: "Flavor", option1Value: "Chocolate", priceCents: 3999, stockQuantity: 60 },
+      { name: "Vanilla", option1Name: "Flavor", option1Value: "Vanilla", priceCents: 3999, stockQuantity: 45 },
     ],
   },
   {
-    title: "TB-500 Research Vial",
-    titleAr: "قارورة TB-500 البحثية",
-    slug: "tb-500-research-vial",
+    title: "Elite Mass Gainer",
+    titleAr: "إيليت لزيادة الكتلة",
+    slug: "elite-mass-gainer",
     description:
-      "TB-500 fragment, produced under strict quality control and verified for identity and purity. For research and laboratory use only.",
+      "1,250 calories and 50g of protein per serving, blended with complex carbs to help hardgainers pack on size between meals.",
     descriptionAr:
-      "جزء TB-500، يُنتج تحت رقابة جودة صارمة ويُتحقق من هويته ونقائه. للاستخدام البحثي والمخبري فقط.",
-    priceCents: 6900,
+      "1250 سعرة حرارية و50 جرامًا من البروتين في كل حصة، ممزوجة بكربوهيدرات معقدة لمساعدة من يصعب عليهم زيادة وزنهم على اكتساب الكتلة بين الوجبات.",
+    priceCents: 4999,
     compareAtCents: null,
-    categorySlug: "recovery-repair",
-    tags: ["recovery"],
+    categorySlug: "protein-mass",
+    tags: ["mass"],
     isFeatured: false,
-    materials: "Lyophilized peptide powder, sealed glass vial.",
-    materialsAr: "مسحوق ببتيد مجفف بالتجميد، قارورة زجاجية محكمة الغلق.",
+    materials: "Whey protein concentrate, maltodextrin, oat flour, MCT oil.",
+    materialsAr: "بروتين مصل اللبن المركز، مالتوديكسترين، دقيق الشوفان، زيت MCT.",
     variants: [
-      { name: "5mg", option1Name: "Size", option1Value: "5mg", priceCents: 6900, stockQuantity: 25 },
-      { name: "10mg", option1Name: "Size", option1Value: "10mg", priceCents: 11900, stockQuantity: 18 },
+      { name: "Chocolate", option1Name: "Flavor", option1Value: "Chocolate", priceCents: 4999, stockQuantity: 30 },
+      { name: "Vanilla", option1Name: "Flavor", option1Value: "Vanilla", priceCents: 4999, stockQuantity: 20 },
     ],
   },
   {
-    title: "Epithalon Longevity Vial",
-    titleAr: "قارورة إيبيثالون لطول العمر",
-    slug: "epithalon-longevity-vial",
+    title: "Nitro Pump Pre-Workout",
+    titleAr: "نيترو بمب ما قبل التمرين",
+    slug: "nitro-pump-pre-workout",
     description:
-      "Epithalon (Epitalon) tetrapeptide, researched extensively for its role in telomerase activity studies. HPLC verified.",
+      "A potent blend of caffeine, beta-alanine, and citrulline malate to sharpen focus and drive explosive pumps through your toughest sets.",
     descriptionAr:
-      "رباعي ببتيد إيبيثالون، يُبحث على نطاق واسع لدوره في دراسات نشاط التيلوميراز. مُتحقق منه عبر HPLC.",
-    priceCents: 4900,
-    compareAtCents: 5900,
-    categorySlug: "longevity",
-    tags: ["longevity", "new"],
+      "مزيج قوي من الكافيين وبيتا ألانين وسيترولين مالات لتعزيز التركيز ودفع ضخ عضلي انفجاري خلال أصعب مجموعاتك التدريبية.",
+    priceCents: 3499,
+    compareAtCents: 3999,
+    categorySlug: "pre-workout-energy",
+    tags: ["bestseller", "energy"],
     isFeatured: true,
-    materials: "Lyophilized peptide powder, sealed glass vial.",
-    materialsAr: "مسحوق ببتيد مجفف بالتجميد، قارورة زجاجية محكمة الغلق.",
+    materials: "Citrulline malate, beta-alanine, caffeine anhydrous, L-tyrosine.",
+    materialsAr: "سيترولين مالات، بيتا ألانين، كافيين لا مائي، إل-تيروزين.",
     variants: [
-      { name: "10mg", option1Name: "Size", option1Value: "10mg", priceCents: 4900, stockQuantity: 50 },
+      { name: "Blue Raspberry", option1Name: "Flavor", option1Value: "Blue Raspberry", priceCents: 3499, stockQuantity: 50 },
+      { name: "Watermelon", option1Name: "Flavor", option1Value: "Watermelon", priceCents: 3499, stockQuantity: 40 },
     ],
   },
   {
-    title: "NAD+ Research Compound",
-    titleAr: "مركب NAD+ البحثي",
-    slug: "nad-research-compound",
+    title: "Micronized Creatine Monohydrate",
+    titleAr: "كرياتين مونوهيدرات مطحون دقيقًا",
+    slug: "micronized-creatine-monohydrate",
     description:
-      "Nicotinamide adenine dinucleotide, supplied for laboratory cellular metabolism research. Cold-chain shipped.",
+      "Pure micronized creatine monohydrate for strength, power, and lean muscle gains. Unflavored and easy to mix into any drink.",
     descriptionAr:
-      "نيكوتيناميد أدينين ثنائي النوكليوتيد، يُورَّد لأبحاث الأيض الخلوي المخبرية. يُشحن بسلسلة تبريد.",
-    priceCents: 8900,
+      "كرياتين مونوهيدرات نقي ومطحون دقيقًا لزيادة القوة والطاقة واكتساب العضلات الخالية من الدهون. بدون نكهة وسهل المزج مع أي مشروب.",
+    priceCents: 2499,
     compareAtCents: null,
-    categorySlug: "longevity",
-    tags: ["longevity"],
-    isFeatured: false,
-    materials: "Lyophilized powder, amber glass vial.",
-    materialsAr: "مسحوق مجفف بالتجميد، قارورة زجاجية كهرمانية.",
-    variants: [
-      { name: "500mg", option1Name: "Size", option1Value: "500mg", priceCents: 8900, stockQuantity: 20 },
-    ],
-  },
-  {
-    title: "AOD-9604 Research Blend",
-    titleAr: "خليط AOD-9604 البحثي",
-    slug: "aod-9604-research-blend",
-    description:
-      "A modified fragment of human growth hormone studied in metabolic and body composition research contexts.",
-    descriptionAr:
-      "جزء معدَّل من هرمون النمو البشري يُدرس في سياقات أبحاث الأيض وتركيب الجسم.",
-    priceCents: 6500,
-    compareAtCents: 7500,
-    categorySlug: "metabolic",
-    tags: ["metabolic", "bestseller"],
+    categorySlug: "pre-workout-energy",
+    tags: ["bestseller"],
     isFeatured: true,
-    materials: "Lyophilized peptide powder, sealed glass vial.",
-    materialsAr: "مسحوق ببتيد مجفف بالتجميد، قارورة زجاجية محكمة الغلق.",
+    materials: "100% micronized creatine monohydrate.",
+    materialsAr: "كرياتين مونوهيدرات مطحون دقيقًا 100%.",
     variants: [
-      { name: "5mg", option1Name: "Size", option1Value: "5mg", priceCents: 6500, stockQuantity: 33 },
+      { name: "300g", option1Name: "Size", option1Value: "300g", priceCents: 2499, stockQuantity: 70 },
+      { name: "600g", option1Name: "Size", option1Value: "600g", priceCents: 4299, stockQuantity: 35 },
     ],
   },
   {
-    title: "Tesamorelin Research Vial",
-    titleAr: "قارورة تيساموريلين البحثية",
-    slug: "tesamorelin-research-vial",
+    title: "Daily Complete Multivitamin",
+    titleAr: "الفيتامينات المتعددة اليومية الكاملة",
+    slug: "daily-complete-multivitamin",
     description:
-      "Growth-hormone releasing factor analog researched in visceral fat and metabolic studies. Third-party tested.",
+      "A full spectrum of essential vitamins and minerals to support energy, immunity, and everyday performance.",
     descriptionAr:
-      "نظير عامل إفراز هرمون النمو يُبحث في دراسات الدهون الحشوية والأيض. مختبَر من طرف ثالث.",
-    priceCents: 8900,
+      "مجموعة كاملة من الفيتامينات والمعادن الأساسية لدعم الطاقة والمناعة والأداء اليومي.",
+    priceCents: 1999,
     compareAtCents: null,
-    categorySlug: "metabolic",
-    tags: ["metabolic"],
+    categorySlug: "vitamins-wellness",
+    tags: ["wellness"],
     isFeatured: false,
-    materials: "Lyophilized peptide powder, sealed glass vial.",
-    materialsAr: "مسحوق ببتيد مجفف بالتجميد، قارورة زجاجية محكمة الغلق.",
+    materials: "Vitamins A, C, D3, E, B-complex, zinc, magnesium, selenium.",
+    materialsAr: "فيتامينات A وC وD3 وE ومركب B، الزنك، المغنيسيوم، السيلينيوم.",
     variants: [
-      { name: "10mg", option1Name: "Size", option1Value: "10mg", priceCents: 8900, stockQuantity: 15 },
+      { name: "60 Tablets", option1Name: "Count", option1Value: "60ct", priceCents: 1999, stockQuantity: 90 },
+      { name: "120 Tablets", option1Name: "Count", option1Value: "120ct", priceCents: 3499, stockQuantity: 60 },
     ],
   },
   {
-    title: "Semax Research Nasal Blend",
-    titleAr: "خليط سيماكس الأنفي البحثي",
-    slug: "semax-research-blend",
+    title: "Omega-3 Fish Oil",
+    titleAr: "زيت السمك أوميغا 3",
+    slug: "omega-3-fish-oil",
     description:
-      "Semax heptapeptide studied for cognitive and neurotrophic research applications. Supplied for laboratory use.",
+      "Molecularly distilled fish oil delivering 1,000mg of EPA and DHA per softgel to support heart, joint, and brain health.",
     descriptionAr:
-      "سباعي ببتيد سيماكس يُدرس لتطبيقات الأبحاث الإدراكية والعصبية الغذائية. يُورَّد للاستخدام المخبري.",
-    priceCents: 5400,
+      "زيت سمك مقطر جزيئيًا يوفر 1000 ملغ من EPA وDHA في كل كبسولة لدعم صحة القلب والمفاصل والدماغ.",
+    priceCents: 1799,
+    compareAtCents: 2199,
+    categorySlug: "vitamins-wellness",
+    tags: ["wellness"],
+    isFeatured: false,
+    materials: "Fish oil concentrate (anchovy, sardine), gelatin softgel, vitamin E.",
+    materialsAr: "مركز زيت السمك (الأنشوجة والسردين)، كبسولة جيلاتينية، فيتامين E.",
+    variants: [
+      { name: "90 Softgels", option1Name: "Count", option1Value: "90ct", priceCents: 1799, stockQuantity: 80 },
+    ],
+  },
+  {
+    title: "Thermo Burn Fat Burner",
+    titleAr: "ثيرمو بيرن لحرق الدهون",
+    slug: "thermo-burn-fat-burner",
+    description:
+      "A thermogenic formula with green tea extract and caffeine to support metabolism and energy while you work toward your goals.",
+    descriptionAr:
+      "تركيبة حرارية تحتوي على مستخلص الشاي الأخضر والكافيين لدعم الأيض والطاقة أثناء سعيك نحو أهدافك.",
+    priceCents: 2999,
+    compareAtCents: 3499,
+    categorySlug: "weight-management",
+    tags: ["weight"],
+    isFeatured: true,
+    materials: "Green tea extract, caffeine anhydrous, L-carnitine, chromium picolinate.",
+    materialsAr: "مستخلص الشاي الأخضر، كافيين لا مائي، إل-كارنيتين، بيكولينات الكروم.",
+    variants: [
+      { name: "60 Capsules", option1Name: "Count", option1Value: "60ct", priceCents: 2999, stockQuantity: 55 },
+    ],
+  },
+  {
+    title: "L-Carnitine 1500 Liquid",
+    titleAr: "إل-كارنيتين 1500 سائل",
+    slug: "l-carnitine-1500-liquid",
+    description:
+      "Fast-absorbing liquid L-Carnitine to help convert fat into usable energy during training.",
+    descriptionAr:
+      "إل-كارنيتين سائل سريع الامتصاص يساعد على تحويل الدهون إلى طاقة قابلة للاستخدام أثناء التمرين.",
+    priceCents: 2199,
     compareAtCents: null,
-    categorySlug: "cognitive",
-    tags: ["cognitive", "new"],
+    categorySlug: "weight-management",
+    tags: ["weight"],
     isFeatured: false,
-    materials: "Lyophilized peptide powder, sealed glass vial.",
-    materialsAr: "مسحوق ببتيد مجفف بالتجميد، قارورة زجاجية محكمة الغلق.",
+    materials: "L-Carnitine tartrate, purified water, natural citrus flavor.",
+    materialsAr: "إل-كارنيتين تارترات، ماء نقي، نكهة حمضيات طبيعية.",
     variants: [
-      { name: "10mg", option1Name: "Size", option1Value: "10mg", priceCents: 5400, stockQuantity: 40 },
+      { name: "16 fl oz", option1Name: "Size", option1Value: "16 fl oz", priceCents: 2199, stockQuantity: 40 },
     ],
   },
   {
-    title: "Selank Research Vial",
-    titleAr: "قارورة سيلانك البحثية",
-    slug: "selank-research-vial",
+    title: "Pro Shaker Bottle",
+    titleAr: "خلاط برو",
+    slug: "pro-shaker-bottle",
     description:
-      "Synthetic heptapeptide analog of tuftsin, researched for anxiolytic and cognitive study applications.",
+      "A 24oz leak-proof shaker with a stainless steel mixing ball for perfectly smooth shakes on the go.",
     descriptionAr:
-      "نظير سباعي ببتيد اصطناعي لمادة التافتسين، يُبحث لتطبيقات دراسات مضادات القلق والإدراك.",
-    priceCents: 5400,
-    compareAtCents: 6200,
-    categorySlug: "cognitive",
-    tags: ["cognitive"],
-    isFeatured: false,
-    materials: "Lyophilized peptide powder, sealed glass vial.",
-    materialsAr: "مسحوق ببتيد مجفف بالتجميد، قارورة زجاجية محكمة الغلق.",
-    variants: [
-      { name: "10mg", option1Name: "Size", option1Value: "10mg", priceCents: 5400, stockQuantity: 27 },
-    ],
-  },
-  {
-    title: "Bacteriostatic Water 30mL",
-    titleAr: "ماء مضاد للجراثيم 30 مل",
-    slug: "bacteriostatic-water-30ml",
-    description:
-      "USP-grade bacteriostatic water for laboratory reconstitution use. Sterile, multi-dose vial.",
-    descriptionAr:
-      "ماء مضاد للجراثيم بدرجة USP للاستخدام في إعادة التركيب المخبري. قارورة معقمة متعددة الجرعات.",
-    priceCents: 1200,
+      "خلاط سعة 24 أونصة مقاوم للتسرب مزود بكرة خلط من الفولاذ المقاوم للصدأ لخلطات ناعمة تمامًا أثناء التنقل.",
+    priceCents: 1299,
     compareAtCents: null,
     categorySlug: "accessories",
     tags: ["accessory"],
     isFeatured: false,
-    materials: "Sterile water with 0.9% benzyl alcohol.",
-    materialsAr: "ماء معقم يحتوي على 0.9% كحول البنزيل.",
+    materials: "BPA-free plastic, stainless steel mixing ball.",
+    materialsAr: "بلاستيك خالٍ من BPA، كرة خلط من الفولاذ المقاوم للصدأ.",
     variants: [
-      { name: "30mL", option1Name: "Size", option1Value: "30mL", priceCents: 1200, stockQuantity: 200 },
+      { name: "Black", option1Name: "Color", option1Value: "Black", priceCents: 1299, stockQuantity: 100 },
+      { name: "White", option1Name: "Color", option1Value: "White", priceCents: 1299, stockQuantity: 80 },
     ],
   },
   {
-    title: "Insulin Syringes (100ct)",
-    titleAr: "حقن الأنسولين (100 حقنة)",
-    slug: "insulin-syringes-100ct",
+    title: "Heavy-Duty Lifting Straps",
+    titleAr: "أشرطة رفع فائقة التحمل",
+    slug: "heavy-duty-lifting-straps",
     description:
-      "1mL 29G insulin syringes for precise laboratory reconstitution and measurement. Box of 100, individually wrapped.",
+      "Cotton-blend lifting straps that lock in your grip so you can push heavier pulls and rows without your hands giving out first.",
     descriptionAr:
-      "حقن أنسولين سعة 1 مل بمقياس 29G لإعادة التركيب والقياس المخبري الدقيق. علبة من 100 حقنة، معبأة بشكل فردي.",
-    priceCents: 1800,
-    compareAtCents: null,
+      "أشرطة رفع مصنوعة من مزيج القطن تثبّت قبضتك لتتمكن من دفع أوزان أثقل في تمارين السحب والتجديف دون أن تخذلك يداك أولاً.",
+    priceCents: 1499,
+    compareAtCents: 1899,
     categorySlug: "accessories",
     tags: ["accessory", "bestseller"],
     isFeatured: false,
-    materials: "Medical-grade plastic, stainless steel needle.",
-    materialsAr: "بلاستيك بدرجة طبية، إبرة من الفولاذ المقاوم للصدأ.",
+    materials: "Cotton-polyester webbing, neoprene wrist padding.",
+    materialsAr: "شريط منسوج من القطن والبوليستر، وسادة معصم من النيوبرين.",
     variants: [
-      { name: "100 count", option1Name: "Pack", option1Value: "100ct", priceCents: 1800, stockQuantity: 150 },
+      { name: "Black", option1Name: "Color", option1Value: "Black", priceCents: 1499, stockQuantity: 65 },
     ],
   },
 ];
 
 const SHIPPING_RETURNS_EN =
-  "Ships within 1-2 business days via cold-chain courier. For laboratory research use only — not for human consumption. Returns accepted on unopened, sealed vials within 30 days.";
+  "Orders ship within 1-2 business days via tracked courier. Unopened items in their original packaging can be returned within 30 days for a full refund.";
 const SHIPPING_RETURNS_AR =
-  "يُشحن خلال يوم إلى يومي عمل عبر شركة شحن بسلسلة تبريد. للاستخدام البحثي المخبري فقط — غير مخصص للاستهلاك البشري. يُقبل الإرجاع للقوارير المغلقة وغير المفتوحة خلال 30 يومًا.";
+  "تُشحن الطلبات خلال يوم إلى يومي عمل عبر شركة شحن يمكن تتبعها. يمكن إرجاع المنتجات غير المفتوحة وبعبوتها الأصلية خلال 30 يومًا لاسترداد كامل المبلغ.";
 
 const productImages: Record<string, string[]> = {
-  "bpc-157-research-blend": [
-    "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=1200&q=80",
-    "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1200&q=80",
+  "gold-whey-protein-isolate": [
+    "https://images.unsplash.com/photo-1693996045899-7cf0ac0229c7?w=1200&q=80",
   ],
-  "tb-500-research-vial": [
-    "https://images.unsplash.com/photo-1580281657702-257584239a55?w=1200&q=80",
+  "elite-mass-gainer": [
+    "https://images.unsplash.com/photo-1680265158261-5fd6ba5d9959?w=1200&q=80",
   ],
-  "epithalon-longevity-vial": [
-    "https://images.unsplash.com/photo-1628771065518-0d82f1938462?w=1200&q=80",
+  "nitro-pump-pre-workout": [
+    "https://images.unsplash.com/photo-1704650311974-8ce378f0e8b0?w=1200&q=80",
   ],
-  "nad-research-compound": [
-    "https://images.unsplash.com/photo-1576671081837-49000212a370?w=1200&q=80",
+  "micronized-creatine-monohydrate": [
+    "https://images.unsplash.com/photo-1724160167630-a33086ddb552?w=1200&q=80",
   ],
-  "aod-9604-research-blend": [
-    "https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=1200&q=80",
+  "daily-complete-multivitamin": [
+    "https://images.unsplash.com/photo-1697273245326-1a3736f6f428?w=1200&q=80",
   ],
-  "tesamorelin-research-vial": [
-    "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=1200&q=80",
+  "omega-3-fish-oil": [
+    "https://images.unsplash.com/photo-1670850756917-8ed6c2a71e12?w=1200&q=80",
   ],
-  "semax-research-blend": [
-    "https://images.unsplash.com/photo-1628771065518-0d82f1938462?w=1200&q=80",
+  "thermo-burn-fat-burner": [
+    "https://images.unsplash.com/photo-1584362917165-526a968579e8?w=1200&q=80",
   ],
-  "selank-research-vial": [
-    "https://images.unsplash.com/photo-1580281657702-257584239a55?w=1200&q=80",
+  "l-carnitine-1500-liquid": [
+    "https://images.unsplash.com/photo-1633423411797-9a7317784d2b?w=1200&q=80",
   ],
-  "bacteriostatic-water-30ml": [
-    "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=1200&q=80",
+  "pro-shaker-bottle": [
+    "https://images.unsplash.com/photo-1775199603318-7f8a9a63b40d?w=1200&q=80",
   ],
-  "insulin-syringes-100ct": [
-    "https://images.unsplash.com/photo-1576671081837-49000212a370?w=1200&q=80",
+  "heavy-duty-lifting-straps": [
+    "https://images.unsplash.com/photo-1582852567809-a25c21a13ee6?w=1200&q=80",
   ],
 };
 
+const OLD_PRODUCT_SLUGS = [
+  "bpc-157-research-blend",
+  "tb-500-research-vial",
+  "epithalon-longevity-vial",
+  "nad-research-compound",
+  "aod-9604-research-blend",
+  "tesamorelin-research-vial",
+  "semax-research-blend",
+  "selank-research-vial",
+  "bacteriostatic-water-30ml",
+  "insulin-syringes-100ct",
+];
+const OLD_CATEGORY_SLUGS = ["recovery-repair", "longevity", "metabolic", "cognitive"];
+
 async function main() {
+  console.log("Removing legacy peptide-research catalog...");
+  const oldProducts = await prisma.product.findMany({
+    where: { slug: { in: OLD_PRODUCT_SLUGS } },
+    select: { id: true },
+  });
+  const oldProductIds = oldProducts.map((p) => p.id);
+  if (oldProductIds.length) {
+    await prisma.review.deleteMany({ where: { productId: { in: oldProductIds } } });
+    await prisma.productImage.deleteMany({ where: { productId: { in: oldProductIds } } });
+    await prisma.variant.deleteMany({ where: { productId: { in: oldProductIds } } });
+    await prisma.product.deleteMany({ where: { id: { in: oldProductIds } } });
+  }
+  await prisma.category.deleteMany({ where: { slug: { in: OLD_CATEGORY_SLUGS } } });
+
   console.log("Seeding categories...");
   for (const c of categories) {
     await prisma.category.upsert({
       where: { slug: c.slug },
-      update: { nameAr: c.nameAr, descriptionAr: c.descriptionAr },
+      update: { name: c.name, nameAr: c.nameAr, description: c.description, descriptionAr: c.descriptionAr },
       create: c,
     });
   }
@@ -291,10 +322,19 @@ async function main() {
     const product = await prisma.product.upsert({
       where: { slug: p.slug },
       update: {
+        title: p.title,
         titleAr: p.titleAr,
+        description: p.description,
         descriptionAr: p.descriptionAr,
+        priceCents: p.priceCents,
+        compareAtCents: p.compareAtCents ?? null,
+        tags: p.tags,
+        isFeatured: p.isFeatured,
+        materials: p.materials,
         materialsAr: p.materialsAr,
+        shippingReturns: SHIPPING_RETURNS_EN,
         shippingReturnsAr: SHIPPING_RETURNS_AR,
+        categoryId: category?.id,
       },
       create: {
         title: p.title,
@@ -327,7 +367,7 @@ async function main() {
     for (const v of p.variants) {
       await prisma.variant.upsert({
         where: { sku: `${p.slug}-${v.option1Value}`.toUpperCase() },
-        update: {},
+        update: { priceCents: v.priceCents, stockQuantity: v.stockQuantity },
         create: {
           productId: product.id,
           name: v.name,
@@ -347,19 +387,19 @@ async function main() {
           productId: product.id,
           authorName: "Jordan M.",
           rating: 5,
-          title: "Exactly as described",
-          titleAr: "مطابق للوصف تمامًا",
-          body: "Purity certificate matched the batch, packaging was cold and secure on arrival.",
-          bodyAr: "شهادة النقاء طابقت الدفعة، ووصلت التغليف باردة وآمنة.",
+          title: "Great quality, will buy again",
+          titleAr: "جودة ممتازة، سأشتري مجددًا",
+          body: "Mixes smoothly and I've noticed real results since adding it to my routine. Packaging arrived in perfect condition.",
+          bodyAr: "يمتزج بسلاسة ولاحظت نتائج حقيقية منذ أن أضفته إلى روتيني. وصلت العبوة بحالة ممتازة.",
         },
         {
           productId: product.id,
           authorName: "Casey R.",
           rating: 4,
-          title: "Solid vendor",
-          titleAr: "بائع موثوق",
-          body: "Fast shipping and good communication. Will reorder for the next research cycle.",
-          bodyAr: "شحن سريع وتواصل جيد. سأطلب مجددًا لدورة البحث القادمة.",
+          title: "Solid product, fast shipping",
+          titleAr: "منتج ممتاز وشحن سريع",
+          body: "Good value for the price and customer service was quick to answer my questions. Will reorder.",
+          bodyAr: "قيمة جيدة مقابل السعر وكانت خدمة العملاء سريعة في الرد على أسئلتي. سأطلب مجددًا.",
         },
       ],
     });
