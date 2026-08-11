@@ -33,18 +33,11 @@
   "Home": {
     "labTestedTitle": "جودة مختبَرة مخبريًا",
     "labTestedDesc": "كل دفعة تُفحص للتأكد من نقائها",
-    "fastShippingTitle": "شحن سريع ومجاني",
-    "fastShippingDesc": "مجاني على الطلبات فوق 1500 جنيه",
-    "guaranteeTitle": "ضمان الرضا",
-    "guaranteeDesc": "ضمان استرداد الأموال خلال 30 يومًا",
     "featuredTitle": "منتجات مميزة",
     "featuredSubtitle": "مجموعة مختارة من مكملاتنا الغذائية وببتيداتنا البحثية.",
     "viewAll": "عرض الكل",
     "categoriesTitle": "تسوّق حسب الفئة",
-    "productsCount": "{count, plural, zero {لا توجد منتجات} one {منتج واحد} two {منتجان} few {# منتجات} many {# منتجًا} other {# منتج}}",
-    "ctaTitle": "مدعوم بضمان استرداد الأموال خلال 30 يومًا",
-    "ctaDescription": "إذا لم يكن المنتج مناسبًا لك، سنصلح الأمر — دون أي أسئلة خلال 30 يومًا من التسليم.",
-    "ctaButton": "تصفّح الكتالوج"
+    "productsCount": "{count, plural, zero {لا توجد منتجات} one {منتج واحد} two {منتجان} few {# منتجات} many {# منتجًا} other {# منتج}}"
   },
   "Footer": {
     "description": "مكملات غذائية متميزة وببتيدات بحثية — مختبَرة للجودة وتصل إليك بسرعة.",

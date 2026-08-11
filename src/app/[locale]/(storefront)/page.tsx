@@ -1,4 +1,4 @@
-import { ArrowRight, BadgeCheck, ShieldCheck, Truck } from "lucide-react";
+import { ArrowRight, BadgeCheck } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 
 import { Hero } from "@/components/storefront/hero";
@@ -21,26 +21,12 @@ export default async function HomePage() {
       <Hero />
 
       <section className="border-b bg-background py-10">
-        <div className="container-page grid grid-cols-1 gap-8 sm:grid-cols-3">
+        <div className="container-page flex justify-center">
           <div className="flex items-center gap-3">
             <BadgeCheck className="h-8 w-8 text-primary" />
             <div>
               <p className="text-sm font-semibold">{t("labTestedTitle")}</p>
               <p className="text-xs text-muted-foreground">{t("labTestedDesc")}</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <Truck className="h-8 w-8 text-primary" />
-            <div>
-              <p className="text-sm font-semibold">{t("fastShippingTitle")}</p>
-              <p className="text-xs text-muted-foreground">{t("fastShippingDesc")}</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <ShieldCheck className="h-8 w-8 text-primary" />
-            <div>
-              <p className="text-sm font-semibold">{t("guaranteeTitle")}</p>
-              <p className="text-xs text-muted-foreground">{t("guaranteeDesc")}</p>
             </div>
           </div>
         </div>
@@ -78,16 +64,6 @@ export default async function HomePage() {
               </Link>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="container-page py-16">
-        <div className="rounded-2xl bg-ink-950 px-8 py-14 text-center text-white">
-          <h2 className="font-display text-2xl font-semibold sm:text-3xl">{t("ctaTitle")}</h2>
-          <p className="mx-auto mt-3 max-w-xl text-sm text-white/70">{t("ctaDescription")}</p>
-          <Button size="lg" className="mt-6" asChild>
-            <Link href="/shop">{t("ctaButton")}</Link>
-          </Button>
         </div>
       </section>
     </>

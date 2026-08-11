@@ -33,18 +33,11 @@
   "Home": {
     "labTestedTitle": "Lab-Tested Quality",
     "labTestedDesc": "Every batch checked for purity",
-    "fastShippingTitle": "Fast, Free Shipping",
-    "fastShippingDesc": "Free on orders over 1,500 EGP",
-    "guaranteeTitle": "Satisfaction Guarantee",
-    "guaranteeDesc": "30-day money-back guarantee",
     "featuredTitle": "Featured Products",
     "featuredSubtitle": "A curated selection of our supplements and research peptides.",
     "viewAll": "View all",
     "categoriesTitle": "Shop by Category",
-    "productsCount": "{count, plural, one {# product} other {# products}}",
-    "ctaTitle": "Backed by a 30-day money-back guarantee",
-    "ctaDescription": "If a product isn't right for you, we'll make it right — no questions asked within 30 days of delivery.",
-    "ctaButton": "Browse the catalog"
+    "productsCount": "{count, plural, one {# product} other {# products}}"
   },
   "Footer": {
     "description": "Premium supplements and research peptides — lab-tested for quality and shipped fast.",
