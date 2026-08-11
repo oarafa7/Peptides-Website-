@@ -1,8 +1,8 @@
 {
   "Meta": {
     "brand": "Marwan Mohsen Supplements",
-    "titleDefault": "Marwan Mohsen Supplements | Premium Sports Nutrition",
-    "description": "Protein, pre-workout, vitamins, and gym essentials — lab-tested for quality and shipped fast so you can keep training."
+    "titleDefault": "Marwan Mohsen Supplements | Premium Supplements & Research Peptides",
+    "description": "Everyday wellness supplements and certified research-grade peptides — lab-tested for quality and shipped fast across Egypt."
   },
   "Nav": {
     "shopAll": "Shop All",
@@ -24,9 +24,9 @@
     "menu": "Toggle menu"
   },
   "Hero": {
-    "badge": "Lab-tested · Trusted by thousands of athletes",
-    "title": "Fuel your training. Trust what's in every scoop.",
-    "description": "Premium protein, pre-workout, and wellness essentials — third-party lab-tested for quality and shipped fast to your door.",
+    "badge": "Lab-tested · Trusted quality",
+    "title": "Premium supplements and research peptides.",
+    "description": "Everyday wellness supplements and certified research-grade peptides — third-party lab-tested for quality and shipped fast across Egypt.",
     "shopAll": "Shop All Products",
     "learnMore": "Learn About Our Quality Standards"
   },
@@ -38,7 +38,7 @@
     "guaranteeTitle": "Satisfaction Guarantee",
     "guaranteeDesc": "30-day money-back guarantee",
     "featuredTitle": "Featured Products",
-    "featuredSubtitle": "Our best-selling supplements, hand-picked for results.",
+    "featuredSubtitle": "A curated selection of our supplements and research peptides.",
     "viewAll": "View all",
     "categoriesTitle": "Shop by Category",
     "productsCount": "{count, plural, one {# product} other {# products}}",
@@ -231,9 +231,9 @@
   },
   "About": {
     "title": "About Marwan Mohsen Supplements",
-    "p1": "Marwan Mohsen Supplements was founded by athletes, for athletes — to make it simple to find protein, pre-workout, and everyday wellness products you can actually trust. Every formula is manufactured in a GMP-certified facility and checked by an independent lab before it ships.",
-    "p2": "We work directly with accredited manufacturers to keep our supply chain short and our pricing fair, so you get premium quality without the premium markup.",
-    "p3": "Whether you're chasing a new personal record or just trying to build a healthier daily routine, our team is here to help you find the right products for your goals."
+    "p1": "Marwan Mohsen Supplements offers a curated catalog of everyday wellness supplements alongside certified research-grade peptides. Every product is sourced from accredited manufacturers and third-party lab-tested before it reaches you.",
+    "p2": "We work directly with our suppliers to keep the supply chain short and pricing fair, so you get pharmacy-grade quality without the pharmacy-grade markup.",
+    "p3": "Research peptides listed on this site are supplied as certified reference materials for laboratory research use only and are not intended for human consumption. Wellness supplements are intended for use as directed on the label."
   },
   "Contact": {
     "title": "Contact Us",
