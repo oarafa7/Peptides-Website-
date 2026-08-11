@@ -4,9 +4,6 @@
     "titleDefault": "مروان محسن للمكملات | مكملات غذائية رياضية متميزة",
     "description": "بروتين، مكملات ما قبل التمرين، فيتامينات، وأساسيات الجيم — مختبَرة من حيث الجودة وتصل إليك بسرعة لتستمر في التدريب."
   },
-  "Announcement": {
-    "text": "شحن مجاني على الطلبات فوق 75 دولارًا · مختبَر للجودة والنقاء"
-  },
   "Nav": {
     "shopAll": "تسوّق الكل",
     "protein": "البروتين وزيادة الكتلة",
@@ -37,7 +34,7 @@
     "labTestedTitle": "جودة مختبَرة مخبريًا",
     "labTestedDesc": "كل دفعة تُفحص للتأكد من نقائها",
     "fastShippingTitle": "شحن سريع ومجاني",
-    "fastShippingDesc": "مجاني على الطلبات فوق 75 دولارًا",
+    "fastShippingDesc": "مجاني على الطلبات فوق 1500 جنيه",
     "guaranteeTitle": "ضمان الرضا",
     "guaranteeDesc": "ضمان استرداد الأموال خلال 30 يومًا",
     "featuredTitle": "منتجات مميزة",
@@ -114,7 +111,6 @@
     "codeWillApply": "سيتم تطبيق الرمز \"{code}\" عند الدفع",
     "subtotal": "المجموع الفرعي",
     "checkout": "الدفع",
-    "redirecting": "جارٍ التحويل إلى صفحة الدفع...",
     "shippingTaxes": "يتم احتساب الشحن والضرائب عند الدفع.",
     "cartOpen": "سلتك مفتوحة في اللوحة الجانبية."
   },
@@ -184,7 +180,10 @@
     "trackingCarrier": "شركة الشحن",
     "trackingNumber": "رقم التتبّع",
     "shippingAddress": "عنوان الشحن",
-    "noOrders": "لم تقم بأي طلبات بعد."
+    "noOrders": "لم تقم بأي طلبات بعد.",
+    "paymentMethod": "طريقة الدفع",
+    "paymentInstaPay": "إنستاباي",
+    "paymentCod": "الدفع عند الاستلام"
   },
   "Addresses": {
     "title": "العناوين",
@@ -210,7 +209,6 @@
   },
   "OrderConfirmation": {
     "notFoundTitle": "لم يتم العثور على طلب",
-    "notRetrievedTitle": "تعذّر العثور على هذا الطلب",
     "backToShop": "العودة إلى المتجر",
     "confirmedTitle": "تم تأكيد الطلب",
     "receiptSentTo": "تم إرسال الإيصال إلى {email}.",
@@ -218,10 +216,15 @@
     "summaryTitle": "ملخص الطلب",
     "subtotal": "المجموع الفرعي",
     "shipping": "الشحن",
-    "tax": "الضريبة",
     "total": "الإجمالي",
     "continueShopping": "متابعة التسوّق",
-    "viewOrderHistory": "عرض سجل الطلبات"
+    "viewOrderHistory": "عرض سجل الطلبات",
+    "instapayPendingTitle": "بانتظار تأكيد الدفع عبر إنستاباي",
+    "instapayPendingBody": "بمجرد استلامنا لتحويلك، سنؤكد طلبك عبر البريد الإلكتروني أو الهاتف خلال ساعات العمل.",
+    "codPendingTitle": "الدفع عند الاستلام",
+    "codPendingBody": "يرجى تجهيز مبلغ {amount} نقدًا عند وصول طلبك.",
+    "discount": "الخصم",
+    "free": "مجاني"
   },
   "About": {
     "title": "عن مروان محسن للمكملات",
@@ -241,7 +244,7 @@
   },
   "Policies": {
     "shippingTitle": "الشحن والإرجاع",
-    "shippingP1": "تُشحن الطلبات خلال يوم إلى يومي عمل عبر شركة شحن يمكن تتبعها. يصل الشحن القياسي عادةً خلال 2-5 أيام عمل، مع شحن مجاني على جميع الطلبات فوق 75 دولارًا.",
+    "shippingP1": "تُشحن الطلبات خلال يوم إلى يومي عمل عبر شركة شحن يمكن تتبعها داخل جمهورية مصر العربية. يصل الشحن القياسي عادةً خلال 2-5 أيام عمل، مع شحن مجاني على جميع الطلبات فوق 1500 جنيه.",
     "shippingP2": "نقبل إرجاع المنتجات غير المفتوحة وبعبوتها الأصلية خلال 30 يومًا من التسليم. يتم استبدال المنتجات التالفة أو الخاطئة مجانًا — تواصل معنا برقم طلبك وصور للشحنة.",
     "shippingP3": "تُرد الأموال إلى وسيلة الدفع الأصلية خلال 5-10 أيام عمل من استلام وفحص المرتجع.",
     "privacyTitle": "سياسة الخصوصية",
@@ -265,7 +268,8 @@
     "orders": "الطلبات",
     "discounts": "الخصومات",
     "viewStore": "عرض المتجر",
-    "signOut": "تسجيل الخروج"
+    "signOut": "تسجيل الخروج",
+    "categories": "الفئات"
   },
   "AdminDashboard": {
     "title": "لوحة التحكم",
@@ -311,8 +315,8 @@
     "statusArchived": "مؤرشف",
     "category": "الفئة",
     "categoryNone": "بدون",
-    "price": "السعر ($)",
-    "compareAt": "السعر قبل الخصم ($)",
+    "price": "السعر (ج.م)",
+    "compareAt": "السعر قبل الخصم (ج.م)",
     "tags": "الوسوم (مفصولة بفواصل)",
     "materials": "المواد / التفاصيل",
     "shippingReturns": "الشحن والإرجاع",
@@ -325,7 +329,7 @@
     "variantNamePlaceholder": "اسم المتغيّر (مثال: 5 ملغ)",
     "optionPlaceholder": "الخيار (مثال: الحجم)",
     "valuePlaceholder": "القيمة (مثال: 5 ملغ)",
-    "priceOverridePlaceholder": "سعر مخصص ($)",
+    "priceOverridePlaceholder": "سعر مخصص (ج.م)",
     "stockPlaceholder": "المخزون",
     "imagesTitle": "الصور",
     "addImage": "إضافة صورة",
@@ -351,7 +355,10 @@
     "colItems": "المنتجات",
     "colTotal": "الإجمالي",
     "colDate": "التاريخ",
-    "noOrders": "لا توجد طلبات."
+    "noOrders": "لا توجد طلبات.",
+    "colPayment": "الدفع",
+    "paymentInstaPay": "إنستاباي",
+    "paymentCod": "الدفع عند الاستلام"
   },
   "AdminOrderDetail": {
     "placed": "تم الطلب في {date} · {email}",
@@ -371,7 +378,13 @@
     "save": "حفظ التغييرات",
     "saving": "جارٍ الحفظ...",
     "updated": "تم تحديث الطلب",
-    "updateFailed": "فشل تحديث الطلب"
+    "updateFailed": "فشل تحديث الطلب",
+    "paymentTitle": "الدفع",
+    "paymentMethod": "طريقة الدفع",
+    "paymentPhone": "الهاتف",
+    "paymentReference": "رقم عملية إنستاباي",
+    "paymentInstaPay": "إنستاباي",
+    "paymentCod": "الدفع عند الاستلام"
   },
   "AdminCoupons": {
     "title": "الخصومات",
@@ -407,5 +420,69 @@
     "enabled": "تم تفعيل رمز الخصم",
     "disabledToast": "تم تعطيل رمز الخصم",
     "deleted": "تم حذف رمز الخصم"
+  },
+  "Checkout": {
+    "title": "إتمام الشراء",
+    "contactTitle": "معلومات التواصل",
+    "email": "البريد الإلكتروني",
+    "phone": "رقم الهاتف",
+    "shippingTitle": "عنوان الشحن",
+    "fullName": "الاسم الكامل",
+    "line1": "العنوان - السطر الأول",
+    "line2": "العنوان - السطر الثاني",
+    "city": "المدينة",
+    "governorate": "المحافظة",
+    "postalCode": "الرمز البريدي (اختياري)",
+    "paymentTitle": "طريقة الدفع",
+    "codTitle": "الدفع عند الاستلام",
+    "codDesc": "ادفع نقدًا عند وصول طلبك.",
+    "instapayTitle": "إنستاباي",
+    "instapayDesc": "حوّل المبلغ فورًا عبر تطبيق إنستاباي.",
+    "instapayInstructions": "حوّل مبلغ {amount} إلى رقم إنستاباي أدناه، ثم أدخل رقم هاتفك أو رقم العملية لمساعدتنا على تأكيد طلبك بسرعة أكبر.",
+    "copy": "نسخ",
+    "numberCopied": "تم نسخ الرقم",
+    "paymentReferenceLabel": "رقم هاتفك على إنستاباي أو رقم العملية",
+    "paymentReferencePlaceholder": "مثال: 01xxxxxxxxx",
+    "paymentReferenceHint": "اختياري، لكنه يساعدنا على تأكيد دفعتك بسرعة أكبر.",
+    "summaryTitle": "ملخص الطلب",
+    "subtotal": "المجموع الفرعي",
+    "shipping": "الشحن",
+    "free": "مجاني",
+    "promoApplied": "سيتم تطبيق الرمز \"{code}\"",
+    "estimatedTotal": "الإجمالي التقديري",
+    "placeOrder": "تأكيد الطلب",
+    "placingOrder": "جارٍ تأكيد الطلب...",
+    "editCartHint": "تحتاج إلى تعديل سلتك؟",
+    "editCartLink": "متابعة التسوّق"
+  },
+  "AdminCategories": {
+    "title": "الفئات",
+    "subtitle": "نظّم كتالوجك إلى فئات قابلة للتسوّق.",
+    "categoriesTitle": "جميع الفئات",
+    "colName": "الاسم",
+    "colNameAr": "الاسم (بالعربية)",
+    "colSlug": "المعرّف",
+    "colProducts": "المنتجات",
+    "colActions": "إجراءات",
+    "noCategories": "لا توجد فئات بعد.",
+    "newCategoryTitle": "فئة جديدة",
+    "name": "الاسم",
+    "nameAr": "الاسم (بالعربية)",
+    "slug": "المعرّف",
+    "slugPlaceholder": "يُنشأ تلقائيًا من الاسم إذا تُرك فارغًا",
+    "description": "الوصف",
+    "descriptionAr": "الوصف (بالعربية)",
+    "saving": "جارٍ الحفظ...",
+    "saveChanges": "حفظ التغييرات",
+    "create": "إنشاء فئة",
+    "created": "تم إنشاء الفئة",
+    "updated": "تم تحديث الفئة",
+    "saveFailed": "فشل حفظ الفئة",
+    "edit": "تعديل",
+    "editCategory": "تعديل الفئة",
+    "delete": "حذف",
+    "confirmDelete": "حذف هذه الفئة؟ ستصبح المنتجات التابعة لها بلا فئة.",
+    "deleted": "تم حذف الفئة",
+    "deleteFailed": "فشل حذف الفئة"
   }
 }

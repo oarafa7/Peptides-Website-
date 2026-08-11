@@ -1,5 +1,5 @@
 import { getServerSession } from "next-auth";
-import { LayoutDashboard, Package, Receipt, Tag, ExternalLink } from "lucide-react";
+import { LayoutDashboard, Layers, Package, Receipt, Tag, ExternalLink } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 
 import { authOptions } from "@/lib/auth";
@@ -23,6 +23,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   const NAV = [
     { href: "/admin", label: t("dashboard"), icon: LayoutDashboard },
     { href: "/admin/products", label: t("products"), icon: Package },
+    { href: "/admin/categories", label: t("categories"), icon: Layers },
     { href: "/admin/orders", label: t("orders"), icon: Receipt },
     { href: "/admin/coupons", label: t("discounts"), icon: Tag },
   ];

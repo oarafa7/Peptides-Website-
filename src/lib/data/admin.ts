@@ -77,3 +77,10 @@ export async function getAdminProductById(id: string) {
 export async function getAllCoupons() {
   return prisma.coupon.findMany({ orderBy: { createdAt: "desc" } });
 }
+
+export async function getAllCategoriesForAdmin() {
+  return prisma.category.findMany({
+    orderBy: { name: "asc" },
+    include: { _count: { select: { products: true } } },
+  });
+}

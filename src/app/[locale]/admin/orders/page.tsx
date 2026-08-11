@@ -46,6 +46,7 @@ export default async function AdminOrdersPage({
               <TableHead>{t("colOrder")}</TableHead>
               <TableHead>{t("colEmail")}</TableHead>
               <TableHead>{t("colStatus")}</TableHead>
+              <TableHead>{t("colPayment")}</TableHead>
               <TableHead>{t("colItems")}</TableHead>
               <TableHead className="text-right">{t("colTotal")}</TableHead>
               <TableHead className="text-right">{t("colDate")}</TableHead>
@@ -63,6 +64,9 @@ export default async function AdminOrdersPage({
                 <TableCell>
                   <Badge variant={STATUS_VARIANT[order.status] ?? "secondary"}>{order.status}</Badge>
                 </TableCell>
+                <TableCell>
+                  {order.paymentMethod === "INSTAPAY" ? t("paymentInstaPay") : t("paymentCod")}
+                </TableCell>
                 <TableCell>{order.items.length}</TableCell>
                 <TableCell className="text-right">{formatPrice(order.totalCents)}</TableCell>
                 <TableCell className="text-right text-muted-foreground">
@@ -72,7 +76,7 @@ export default async function AdminOrdersPage({
             ))}
             {orders.length === 0 && (
               <TableRow>
-                <TableCell colSpan={6} className="text-center text-sm text-muted-foreground">
+                <TableCell colSpan={7} className="text-center text-sm text-muted-foreground">
                   {t("noOrders")}
                 </TableCell>
               </TableRow>

@@ -207,9 +207,9 @@ model Address {
   line1      String
   line2      String?
   city       String
-  state      String
-  postalCode String
-  country    String  @default("US")
+  state      String?
+  postalCode String?
+  country    String  @default("EG")
   phone      String?
   isDefault  Boolean @default(false)
 
@@ -219,25 +219,31 @@ model Address {
   @@index([userId])
 }
 
+enum PaymentMethod {
+  INSTAPAY
+  COD
+}
+
 model Order {
-  id                    String      @id @default(cuid())
-  userId                String?
-  email                 String
-  status                OrderStatus @default(PENDING)
-  subtotalCents         Int
-  discountCents         Int         @default(0)
-  taxCents              Int         @default(0)
-  shippingCents         Int         @default(0)
-  totalCents            Int
-  currency              String      @default("usd")
-  couponId              String?
-  addressId             String?
-  trackingNumber        String?
-  trackingCarrier       String?
-  stripeCheckoutId      String?     @unique
-  stripePaymentIntentId String?     @unique
-  createdAt             DateTime    @default(now())
-  updatedAt             DateTime    @updatedAt
+  id               String        @id @default(cuid())
+  userId           String?
+  email            String
+  phone            String?
+  status           OrderStatus   @default(PENDING)
+  paymentMethod    PaymentMethod @default(COD)
+  paymentReference String?
+  subtotalCents    Int
+  discountCents    Int           @default(0)
+  taxCents         Int           @default(0)
+  shippingCents    Int           @default(0)
+  totalCents       Int
+  currency         String        @default("egp")
+  couponId         String?
+  addressId        String?
+  trackingNumber   String?
+  trackingCarrier  String?
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
 
   user    User?    @relation(fields: [userId], references: [id])
   address Address? @relation(fields: [addressId], references: [id])

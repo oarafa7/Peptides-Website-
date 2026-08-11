@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useTransition } from "react";
+import { useState } from "react";
 import { Minus, Plus, ShoppingBag, Trash2, X } from "lucide-react";
 import { toast } from "sonner";
 import { useLocale, useTranslations } from "next-intl";
@@ -18,7 +18,6 @@ import {
 import { Link } from "@/i18n/navigation";
 import { useCart, useCartTotals } from "@/lib/store/cart";
 import { cn, formatPrice } from "@/lib/utils";
-import { createCheckoutSession } from "@/lib/actions/checkout";
 
 export function CartDrawer() {
   const t = useTranslations("Cart");
@@ -33,27 +32,6 @@ export function CartDrawer() {
   const { subtotalCents } = useCartTotals();
 
   const [couponInput, setCouponInput] = useState(couponCode ?? "");
-  const [isPending, startTransition] = useTransition();
-
-  function handleCheckout() {
-    startTransition(async () => {
-      const result = await createCheckoutSession({
-        items: items.map((i) => ({
-          productId: i.productId,
-          variantId: i.variantId,
-          quantity: i.quantity,
-        })),
-        couponCode: couponCode ?? undefined,
-      });
-
-      if ("error" in result) {
-        toast.error(result.error);
-        return;
-      }
-
-      window.location.href = result.url;
-    });
-  }
 
   return (
     <Sheet open={isOpen} onOpenChange={(o) => (o ? useCart.getState().open() : close())}>
@@ -167,8 +145,8 @@ export function CartDrawer() {
                 <span className="text-muted-foreground">{t("subtotal")}</span>
                 <span className="font-semibold">{formatPrice(subtotalCents)}</span>
               </div>
-              <Button className="w-full" size="lg" onClick={handleCheckout} disabled={isPending}>
-                {isPending ? t("redirecting") : t("checkout")}
+              <Button className="w-full" size="lg" asChild onClick={close}>
+                <Link href="/checkout">{t("checkout")}</Link>
               </Button>
               <p className="mt-2 text-center text-xs text-muted-foreground">{t("shippingTaxes")}</p>
             </div>

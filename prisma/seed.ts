@@ -50,16 +50,16 @@ const products = [
       "25g of fast-absorbing whey protein isolate per scoop, with minimal fat and sugar. Perfect for post-workout recovery or any time you need a clean protein boost.",
     descriptionAr:
       "25 جرامًا من بروتين مصل اللبن المعزول سريع الامتصاص في كل مغرفة، بأقل نسبة من الدهون والسكر. مثالي للتعافي بعد التمرين أو في أي وقت تحتاج فيه إلى جرعة بروتين نظيفة.",
-    priceCents: 3999,
-    compareAtCents: 4999,
+    priceCents: 220000,
+    compareAtCents: 280000,
     categorySlug: "protein-mass",
     tags: ["bestseller", "protein"],
     isFeatured: true,
     materials: "Whey protein isolate, natural and artificial flavors, sunflower lecithin, stevia leaf extract.",
     materialsAr: "بروتين مصل اللبن المعزول، نكهات طبيعية واصطناعية، ليسيثين دوار الشمس، مستخلص أوراق الستيفيا.",
     variants: [
-      { name: "Chocolate", option1Name: "Flavor", option1Value: "Chocolate", priceCents: 3999, stockQuantity: 60 },
-      { name: "Vanilla", option1Name: "Flavor", option1Value: "Vanilla", priceCents: 3999, stockQuantity: 45 },
+      { name: "Chocolate", option1Name: "Flavor", option1Value: "Chocolate", priceCents: 220000, stockQuantity: 60 },
+      { name: "Vanilla", option1Name: "Flavor", option1Value: "Vanilla", priceCents: 220000, stockQuantity: 45 },
     ],
   },
   {
@@ -70,7 +70,7 @@ const products = [
       "1,250 calories and 50g of protein per serving, blended with complex carbs to help hardgainers pack on size between meals.",
     descriptionAr:
       "1250 سعرة حرارية و50 جرامًا من البروتين في كل حصة، ممزوجة بكربوهيدرات معقدة لمساعدة من يصعب عليهم زيادة وزنهم على اكتساب الكتلة بين الوجبات.",
-    priceCents: 4999,
+    priceCents: 280000,
     compareAtCents: null,
     categorySlug: "protein-mass",
     tags: ["mass"],
@@ -78,8 +78,8 @@ const products = [
     materials: "Whey protein concentrate, maltodextrin, oat flour, MCT oil.",
     materialsAr: "بروتين مصل اللبن المركز، مالتوديكسترين، دقيق الشوفان، زيت MCT.",
     variants: [
-      { name: "Chocolate", option1Name: "Flavor", option1Value: "Chocolate", priceCents: 4999, stockQuantity: 30 },
-      { name: "Vanilla", option1Name: "Flavor", option1Value: "Vanilla", priceCents: 4999, stockQuantity: 20 },
+      { name: "Chocolate", option1Name: "Flavor", option1Value: "Chocolate", priceCents: 280000, stockQuantity: 30 },
+      { name: "Vanilla", option1Name: "Flavor", option1Value: "Vanilla", priceCents: 280000, stockQuantity: 20 },
     ],
   },
   {
@@ -90,16 +90,16 @@ const products = [
       "A potent blend of caffeine, beta-alanine, and citrulline malate to sharpen focus and drive explosive pumps through your toughest sets.",
     descriptionAr:
       "مزيج قوي من الكافيين وبيتا ألانين وسيترولين مالات لتعزيز التركيز ودفع ضخ عضلي انفجاري خلال أصعب مجموعاتك التدريبية.",
-    priceCents: 3499,
-    compareAtCents: 3999,
+    priceCents: 140000,
+    compareAtCents: 160000,
     categorySlug: "pre-workout-energy",
     tags: ["bestseller", "energy"],
     isFeatured: true,
     materials: "Citrulline malate, beta-alanine, caffeine anhydrous, L-tyrosine.",
     materialsAr: "سيترولين مالات، بيتا ألانين، كافيين لا مائي، إل-تيروزين.",
     variants: [
-      { name: "Blue Raspberry", option1Name: "Flavor", option1Value: "Blue Raspberry", priceCents: 3499, stockQuantity: 50 },
-      { name: "Watermelon", option1Name: "Flavor", option1Value: "Watermelon", priceCents: 3499, stockQuantity: 40 },
+      { name: "Blue Raspberry", option1Name: "Flavor", option1Value: "Blue Raspberry", priceCents: 140000, stockQuantity: 50 },
+      { name: "Watermelon", option1Name: "Flavor", option1Value: "Watermelon", priceCents: 140000, stockQuantity: 40 },
     ],
   },
   {
@@ -110,7 +110,7 @@ const products = [
       "Pure micronized creatine monohydrate for strength, power, and lean muscle gains. Unflavored and easy to mix into any drink.",
     descriptionAr:
       "كرياتين مونوهيدرات نقي ومطحون دقيقًا لزيادة القوة والطاقة واكتساب العضلات الخالية من الدهون. بدون نكهة وسهل المزج مع أي مشروب.",
-    priceCents: 2499,
+    priceCents: 65000,
     compareAtCents: null,
     categorySlug: "pre-workout-energy",
     tags: ["bestseller"],
@@ -118,8 +118,8 @@ const products = [
     materials: "100% micronized creatine monohydrate.",
     materialsAr: "كرياتين مونوهيدرات مطحون دقيقًا 100%.",
     variants: [
-      { name: "300g", option1Name: "Size", option1Value: "300g", priceCents: 2499, stockQuantity: 70 },
-      { name: "600g", option1Name: "Size", option1Value: "600g", priceCents: 4299, stockQuantity: 35 },
+      { name: "300g", option1Name: "Size", option1Value: "300g", priceCents: 65000, stockQuantity: 70 },
+      { name: "600g", option1Name: "Size", option1Value: "600g", priceCents: 110000, stockQuantity: 35 },
     ],
   },
   {
@@ -130,7 +130,7 @@ const products = [
       "A full spectrum of essential vitamins and minerals to support energy, immunity, and everyday performance.",
     descriptionAr:
       "مجموعة كاملة من الفيتامينات والمعادن الأساسية لدعم الطاقة والمناعة والأداء اليومي.",
-    priceCents: 1999,
+    priceCents: 45000,
     compareAtCents: null,
     categorySlug: "vitamins-wellness",
     tags: ["wellness"],
@@ -138,8 +138,8 @@ const products = [
     materials: "Vitamins A, C, D3, E, B-complex, zinc, magnesium, selenium.",
     materialsAr: "فيتامينات A وC وD3 وE ومركب B، الزنك، المغنيسيوم، السيلينيوم.",
     variants: [
-      { name: "60 Tablets", option1Name: "Count", option1Value: "60ct", priceCents: 1999, stockQuantity: 90 },
-      { name: "120 Tablets", option1Name: "Count", option1Value: "120ct", priceCents: 3499, stockQuantity: 60 },
+      { name: "60 Tablets", option1Name: "Count", option1Value: "60ct", priceCents: 45000, stockQuantity: 90 },
+      { name: "120 Tablets", option1Name: "Count", option1Value: "120ct", priceCents: 80000, stockQuantity: 60 },
     ],
   },
   {
@@ -150,15 +150,15 @@ const products = [
       "Molecularly distilled fish oil delivering 1,000mg of EPA and DHA per softgel to support heart, joint, and brain health.",
     descriptionAr:
       "زيت سمك مقطر جزيئيًا يوفر 1000 ملغ من EPA وDHA في كل كبسولة لدعم صحة القلب والمفاصل والدماغ.",
-    priceCents: 1799,
-    compareAtCents: 2199,
+    priceCents: 40000,
+    compareAtCents: 50000,
     categorySlug: "vitamins-wellness",
     tags: ["wellness"],
     isFeatured: false,
     materials: "Fish oil concentrate (anchovy, sardine), gelatin softgel, vitamin E.",
     materialsAr: "مركز زيت السمك (الأنشوجة والسردين)، كبسولة جيلاتينية، فيتامين E.",
     variants: [
-      { name: "90 Softgels", option1Name: "Count", option1Value: "90ct", priceCents: 1799, stockQuantity: 80 },
+      { name: "90 Softgels", option1Name: "Count", option1Value: "90ct", priceCents: 40000, stockQuantity: 80 },
     ],
   },
   {
@@ -169,15 +169,15 @@ const products = [
       "A thermogenic formula with green tea extract and caffeine to support metabolism and energy while you work toward your goals.",
     descriptionAr:
       "تركيبة حرارية تحتوي على مستخلص الشاي الأخضر والكافيين لدعم الأيض والطاقة أثناء سعيك نحو أهدافك.",
-    priceCents: 2999,
-    compareAtCents: 3499,
+    priceCents: 90000,
+    compareAtCents: 105000,
     categorySlug: "weight-management",
     tags: ["weight"],
     isFeatured: true,
     materials: "Green tea extract, caffeine anhydrous, L-carnitine, chromium picolinate.",
     materialsAr: "مستخلص الشاي الأخضر، كافيين لا مائي، إل-كارنيتين، بيكولينات الكروم.",
     variants: [
-      { name: "60 Capsules", option1Name: "Count", option1Value: "60ct", priceCents: 2999, stockQuantity: 55 },
+      { name: "60 Capsules", option1Name: "Count", option1Value: "60ct", priceCents: 90000, stockQuantity: 55 },
     ],
   },
   {
@@ -188,7 +188,7 @@ const products = [
       "Fast-absorbing liquid L-Carnitine to help convert fat into usable energy during training.",
     descriptionAr:
       "إل-كارنيتين سائل سريع الامتصاص يساعد على تحويل الدهون إلى طاقة قابلة للاستخدام أثناء التمرين.",
-    priceCents: 2199,
+    priceCents: 55000,
     compareAtCents: null,
     categorySlug: "weight-management",
     tags: ["weight"],
@@ -196,7 +196,7 @@ const products = [
     materials: "L-Carnitine tartrate, purified water, natural citrus flavor.",
     materialsAr: "إل-كارنيتين تارترات، ماء نقي، نكهة حمضيات طبيعية.",
     variants: [
-      { name: "16 fl oz", option1Name: "Size", option1Value: "16 fl oz", priceCents: 2199, stockQuantity: 40 },
+      { name: "16 fl oz", option1Name: "Size", option1Value: "16 fl oz", priceCents: 55000, stockQuantity: 40 },
     ],
   },
   {
@@ -207,7 +207,7 @@ const products = [
       "A 24oz leak-proof shaker with a stainless steel mixing ball for perfectly smooth shakes on the go.",
     descriptionAr:
       "خلاط سعة 24 أونصة مقاوم للتسرب مزود بكرة خلط من الفولاذ المقاوم للصدأ لخلطات ناعمة تمامًا أثناء التنقل.",
-    priceCents: 1299,
+    priceCents: 25000,
     compareAtCents: null,
     categorySlug: "accessories",
     tags: ["accessory"],
@@ -215,8 +215,8 @@ const products = [
     materials: "BPA-free plastic, stainless steel mixing ball.",
     materialsAr: "بلاستيك خالٍ من BPA، كرة خلط من الفولاذ المقاوم للصدأ.",
     variants: [
-      { name: "Black", option1Name: "Color", option1Value: "Black", priceCents: 1299, stockQuantity: 100 },
-      { name: "White", option1Name: "Color", option1Value: "White", priceCents: 1299, stockQuantity: 80 },
+      { name: "Black", option1Name: "Color", option1Value: "Black", priceCents: 25000, stockQuantity: 100 },
+      { name: "White", option1Name: "Color", option1Value: "White", priceCents: 25000, stockQuantity: 80 },
     ],
   },
   {
@@ -227,23 +227,23 @@ const products = [
       "Cotton-blend lifting straps that lock in your grip so you can push heavier pulls and rows without your hands giving out first.",
     descriptionAr:
       "أشرطة رفع مصنوعة من مزيج القطن تثبّت قبضتك لتتمكن من دفع أوزان أثقل في تمارين السحب والتجديف دون أن تخذلك يداك أولاً.",
-    priceCents: 1499,
-    compareAtCents: 1899,
+    priceCents: 35000,
+    compareAtCents: 45000,
     categorySlug: "accessories",
     tags: ["accessory", "bestseller"],
     isFeatured: false,
     materials: "Cotton-polyester webbing, neoprene wrist padding.",
     materialsAr: "شريط منسوج من القطن والبوليستر، وسادة معصم من النيوبرين.",
     variants: [
-      { name: "Black", option1Name: "Color", option1Value: "Black", priceCents: 1499, stockQuantity: 65 },
+      { name: "Black", option1Name: "Color", option1Value: "Black", priceCents: 35000, stockQuantity: 65 },
     ],
   },
 ];
 
 const SHIPPING_RETURNS_EN =
-  "Orders ship within 1-2 business days via tracked courier. Unopened items in their original packaging can be returned within 30 days for a full refund.";
+  "Orders ship within 1-2 business days via tracked courier across Egypt. Pay by InstaPay or cash on delivery. Unopened items in their original packaging can be returned within 30 days for a full refund.";
 const SHIPPING_RETURNS_AR =
-  "تُشحن الطلبات خلال يوم إلى يومي عمل عبر شركة شحن يمكن تتبعها. يمكن إرجاع المنتجات غير المفتوحة وبعبوتها الأصلية خلال 30 يومًا لاسترداد كامل المبلغ.";
+  "تُشحن الطلبات خلال يوم إلى يومي عمل عبر شركة شحن يمكن تتبعها داخل جمهورية مصر العربية. ادفع عبر إنستاباي أو نقدًا عند الاستلام. يمكن إرجاع المنتجات غير المفتوحة وبعبوتها الأصلية خلال 30 يومًا لاسترداد كامل المبلغ.";
 
 const productImages: Record<string, string[]> = {
   "gold-whey-protein-isolate": [
@@ -408,7 +408,7 @@ async function main() {
   console.log("Seeding coupons...");
   await prisma.coupon.upsert({
     where: { code: "WELCOME10" },
-    update: {},
+    update: { type: DiscountType.PERCENTAGE, value: 10, usageLimit: 500, isActive: true },
     create: {
       code: "WELCOME10",
       type: DiscountType.PERCENTAGE,
@@ -419,12 +419,12 @@ async function main() {
   });
   await prisma.coupon.upsert({
     where: { code: "FREESHIP" },
-    update: {},
+    update: { type: DiscountType.FREE_SHIPPING, value: 0, minSubtotalCents: 150000, isActive: true },
     create: {
       code: "FREESHIP",
       type: DiscountType.FREE_SHIPPING,
       value: 0,
-      minSubtotalCents: 10000,
+      minSubtotalCents: 150000,
       isActive: true,
     },
   });

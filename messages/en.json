@@ -4,9 +4,6 @@
     "titleDefault": "Marwan Mohsen Supplements | Premium Sports Nutrition",
     "description": "Protein, pre-workout, vitamins, and gym essentials — lab-tested for quality and shipped fast so you can keep training."
   },
-  "Announcement": {
-    "text": "Free shipping on all orders over $75 · Lab-tested for quality and purity"
-  },
   "Nav": {
     "shopAll": "Shop All",
     "protein": "Protein & Mass",
@@ -37,7 +34,7 @@
     "labTestedTitle": "Lab-Tested Quality",
     "labTestedDesc": "Every batch checked for purity",
     "fastShippingTitle": "Fast, Free Shipping",
-    "fastShippingDesc": "Free on orders over $75",
+    "fastShippingDesc": "Free on orders over 1,500 EGP",
     "guaranteeTitle": "Satisfaction Guarantee",
     "guaranteeDesc": "30-day money-back guarantee",
     "featuredTitle": "Featured Products",
@@ -114,7 +111,6 @@
     "codeWillApply": "Code \"{code}\" will be applied at checkout",
     "subtotal": "Subtotal",
     "checkout": "Checkout",
-    "redirecting": "Redirecting to checkout...",
     "shippingTaxes": "Shipping and taxes calculated at checkout.",
     "cartOpen": "Your cart is open in the drawer."
   },
@@ -184,7 +180,10 @@
     "trackingCarrier": "Carrier",
     "trackingNumber": "Tracking number",
     "shippingAddress": "Shipping Address",
-    "noOrders": "You haven't placed any orders yet."
+    "noOrders": "You haven't placed any orders yet.",
+    "paymentMethod": "Payment method",
+    "paymentInstaPay": "InstaPay",
+    "paymentCod": "Cash on Delivery"
   },
   "Addresses": {
     "title": "Addresses",
@@ -210,7 +209,6 @@
   },
   "OrderConfirmation": {
     "notFoundTitle": "No order found",
-    "notRetrievedTitle": "We couldn't find that order",
     "backToShop": "Back to shop",
     "confirmedTitle": "Order confirmed",
     "receiptSentTo": "A receipt has been sent to {email}.",
@@ -218,10 +216,15 @@
     "summaryTitle": "Order Summary",
     "subtotal": "Subtotal",
     "shipping": "Shipping",
-    "tax": "Tax",
     "total": "Total",
     "continueShopping": "Continue shopping",
-    "viewOrderHistory": "View order history"
+    "viewOrderHistory": "View order history",
+    "instapayPendingTitle": "Awaiting InstaPay confirmation",
+    "instapayPendingBody": "Once we receive your transfer, we'll confirm your order by email or phone during business hours.",
+    "codPendingTitle": "Cash on Delivery",
+    "codPendingBody": "Please have {amount} ready in cash when your order arrives.",
+    "discount": "Discount",
+    "free": "Free"
   },
   "About": {
     "title": "About Marwan Mohsen Supplements",
@@ -241,7 +244,7 @@
   },
   "Policies": {
     "shippingTitle": "Shipping & Returns",
-    "shippingP1": "Orders ship within 1-2 business days via tracked courier. Standard shipping typically arrives within 2-5 business days, with free shipping on all orders over $75.",
+    "shippingP1": "Orders ship within 1-2 business days via tracked courier across Egypt. Standard shipping typically arrives within 2-5 business days, with free shipping on all orders over EGP 1,500.",
     "shippingP2": "We accept returns on unopened items in their original packaging within 30 days of delivery. Damaged or incorrect items are replaced free of charge — contact us with your order number and photos of the shipment.",
     "shippingP3": "Refunds are issued to the original payment method within 5-10 business days of the return being received and inspected.",
     "privacyTitle": "Privacy Policy",
@@ -265,7 +268,8 @@
     "orders": "Orders",
     "discounts": "Discounts",
     "viewStore": "View store",
-    "signOut": "Sign out"
+    "signOut": "Sign out",
+    "categories": "Categories"
   },
   "AdminDashboard": {
     "title": "Dashboard",
@@ -311,8 +315,8 @@
     "statusArchived": "Archived",
     "category": "Category",
     "categoryNone": "None",
-    "price": "Price ($)",
-    "compareAt": "Compare-at price ($)",
+    "price": "Price (EGP)",
+    "compareAt": "Compare-at price (EGP)",
     "tags": "Tags (comma separated)",
     "materials": "Materials / Details",
     "shippingReturns": "Shipping & Returns",
@@ -325,7 +329,7 @@
     "variantNamePlaceholder": "Variant name (e.g. 5mg)",
     "optionPlaceholder": "Option (e.g. Size)",
     "valuePlaceholder": "Value (e.g. 5mg)",
-    "priceOverridePlaceholder": "Price override ($)",
+    "priceOverridePlaceholder": "Price override (EGP)",
     "stockPlaceholder": "Stock",
     "imagesTitle": "Images",
     "addImage": "Add image",
@@ -351,7 +355,10 @@
     "colItems": "Items",
     "colTotal": "Total",
     "colDate": "Date",
-    "noOrders": "No orders found."
+    "noOrders": "No orders found.",
+    "colPayment": "Payment",
+    "paymentInstaPay": "InstaPay",
+    "paymentCod": "Cash on Delivery"
   },
   "AdminOrderDetail": {
     "placed": "Placed {date} · {email}",
@@ -371,7 +378,13 @@
     "save": "Save changes",
     "saving": "Saving...",
     "updated": "Order updated",
-    "updateFailed": "Failed to update order"
+    "updateFailed": "Failed to update order",
+    "paymentTitle": "Payment",
+    "paymentMethod": "Payment method",
+    "paymentPhone": "Phone",
+    "paymentReference": "InstaPay reference",
+    "paymentInstaPay": "InstaPay",
+    "paymentCod": "Cash on Delivery"
   },
   "AdminCoupons": {
     "title": "Discounts",
@@ -407,5 +420,69 @@
     "enabled": "Coupon enabled",
     "disabledToast": "Coupon disabled",
     "deleted": "Coupon deleted"
+  },
+  "Checkout": {
+    "title": "Checkout",
+    "contactTitle": "Contact information",
+    "email": "Email",
+    "phone": "Phone number",
+    "shippingTitle": "Shipping address",
+    "fullName": "Full name",
+    "line1": "Address line 1",
+    "line2": "Address line 2",
+    "city": "City",
+    "governorate": "Governorate",
+    "postalCode": "Postal code (optional)",
+    "paymentTitle": "Payment method",
+    "codTitle": "Cash on Delivery",
+    "codDesc": "Pay in cash when your order arrives.",
+    "instapayTitle": "InstaPay",
+    "instapayDesc": "Send payment instantly via the InstaPay app.",
+    "instapayInstructions": "Send {amount} to the InstaPay number below, then enter your phone number or transaction reference to help us confirm your order faster.",
+    "copy": "Copy",
+    "numberCopied": "Number copied",
+    "paymentReferenceLabel": "Your InstaPay phone number or transaction reference",
+    "paymentReferencePlaceholder": "e.g. 01xxxxxxxxx",
+    "paymentReferenceHint": "Optional, but it helps us confirm your payment faster.",
+    "summaryTitle": "Order summary",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "free": "Free",
+    "promoApplied": "Code \"{code}\" will be applied",
+    "estimatedTotal": "Estimated total",
+    "placeOrder": "Place order",
+    "placingOrder": "Placing order...",
+    "editCartHint": "Need to edit your cart?",
+    "editCartLink": "Continue shopping"
+  },
+  "AdminCategories": {
+    "title": "Categories",
+    "subtitle": "Organize your catalog into shoppable categories.",
+    "categoriesTitle": "All Categories",
+    "colName": "Name",
+    "colNameAr": "Name (Arabic)",
+    "colSlug": "Slug",
+    "colProducts": "Products",
+    "colActions": "Actions",
+    "noCategories": "No categories yet.",
+    "newCategoryTitle": "New Category",
+    "name": "Name",
+    "nameAr": "Name (Arabic)",
+    "slug": "Slug",
+    "slugPlaceholder": "Auto-generated from name if left blank",
+    "description": "Description",
+    "descriptionAr": "Description (Arabic)",
+    "saving": "Saving...",
+    "saveChanges": "Save changes",
+    "create": "Create category",
+    "created": "Category created",
+    "updated": "Category updated",
+    "saveFailed": "Failed to save category",
+    "edit": "Edit",
+    "editCategory": "Edit Category",
+    "delete": "Delete",
+    "confirmDelete": "Delete this category? Products in it will become uncategorized.",
+    "deleted": "Category deleted",
+    "deleteFailed": "Failed to delete category"
   }
 }

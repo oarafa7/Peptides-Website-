@@ -14,8 +14,8 @@ type Address = {
   line1: string;
   line2: string | null;
   city: string;
-  state: string;
-  postalCode: string;
+  state: string | null;
+  postalCode: string | null;
   country: string;
   isDefault: boolean;
 };
@@ -39,7 +39,9 @@ export function AddressList({ addresses }: { addresses: Address[] }) {
           <p className="text-muted-foreground">{address.line1}</p>
           {address.line2 && <p className="text-muted-foreground">{address.line2}</p>}
           <p className="text-muted-foreground">
-            {address.city}, {address.state} {address.postalCode}
+            {address.city}
+            {address.state ? `, ${address.state}` : ""}
+            {address.postalCode ? ` ${address.postalCode}` : ""}
           </p>
           <p className="text-muted-foreground">{address.country}</p>
           <Button

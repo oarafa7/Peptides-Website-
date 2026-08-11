@@ -45,15 +45,15 @@ export function AddressForm() {
       </div>
       <div className="space-y-2">
         <Label htmlFor="state">{t("state")}</Label>
-        <Input id="state" name="state" required />
+        <Input id="state" name="state" />
       </div>
       <div className="space-y-2">
         <Label htmlFor="postalCode">{t("postalCode")}</Label>
-        <Input id="postalCode" name="postalCode" required />
+        <Input id="postalCode" name="postalCode" />
       </div>
       <div className="space-y-2">
         <Label htmlFor="country">{t("country")}</Label>
-        <Input id="country" name="country" defaultValue="US" required />
+        <Input id="country" name="country" defaultValue="Egypt" required />
       </div>
       <div className="space-y-2 sm:col-span-2">
         <Label htmlFor="phone">{t("phone")}</Label>

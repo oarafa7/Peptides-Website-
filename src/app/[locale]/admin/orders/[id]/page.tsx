@@ -70,6 +70,34 @@ export default async function AdminOrderDetailPage({ params }: { params: { id: s
             </CardContent>
           </Card>
 
+          <Card>
+            <CardHeader>
+              <CardTitle>{t("paymentTitle")}</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-1 text-sm">
+              <div className="flex justify-between">
+                <span className="text-muted-foreground">{t("paymentMethod")}</span>
+                <span className="font-medium">
+                  {order.paymentMethod === "INSTAPAY" ? t("paymentInstaPay") : t("paymentCod")}
+                </span>
+              </div>
+              {order.phone && (
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">{t("paymentPhone")}</span>
+                  <span className="font-medium" dir="ltr">
+                    {order.phone}
+                  </span>
+                </div>
+              )}
+              {order.paymentReference && (
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">{t("paymentReference")}</span>
+                  <span className="font-medium">{order.paymentReference}</span>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+
           {order.address && (
             <Card>
               <CardHeader>
@@ -80,7 +108,9 @@ export default async function AdminOrderDetailPage({ params }: { params: { id: s
                 <p>{order.address.line1}</p>
                 {order.address.line2 && <p>{order.address.line2}</p>}
                 <p>
-                  {order.address.city}, {order.address.state} {order.address.postalCode}
+                  {order.address.city}
+                  {order.address.state ? `, ${order.address.state}` : ""}
+                  {order.address.postalCode ? ` ${order.address.postalCode}` : ""}
                 </p>
                 <p>{order.address.country}</p>
               </CardContent>

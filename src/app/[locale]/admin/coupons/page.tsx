@@ -6,6 +6,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { CouponForm } from "@/components/admin/coupon-form";
 import { CouponRowActions } from "@/components/admin/coupon-row-actions";
 import { getAllCoupons } from "@/lib/data/admin";
+import { formatPrice } from "@/lib/utils";
 
 export default async function AdminCouponsPage() {
   const [coupons, t] = await Promise.all([getAllCoupons(), getTranslations("AdminCoupons")]);
@@ -43,7 +44,7 @@ export default async function AdminCouponsPage() {
                       {coupon.type === "PERCENTAGE"
                         ? `${coupon.value}%`
                         : coupon.type === "FIXED_AMOUNT"
-                        ? `$${(coupon.value / 100).toFixed(2)}`
+                        ? formatPrice(coupon.value)
                         : "—"}
                     </TableCell>
                     <TableCell>

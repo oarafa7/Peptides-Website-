@@ -31,6 +31,10 @@ export default async function AccountOrderDetailPage({ params }: { params: { id:
         <Badge>{order.status}</Badge>
       </div>
 
+      <p className="text-sm text-muted-foreground">
+        {t("paymentMethod")}: {order.paymentMethod === "INSTAPAY" ? t("paymentInstaPay") : t("paymentCod")}
+      </p>
+
       {order.trackingNumber && (
         <Card>
           <CardHeader>
@@ -75,7 +79,9 @@ export default async function AccountOrderDetailPage({ params }: { params: { id:
             <p>{order.address.line1}</p>
             {order.address.line2 && <p>{order.address.line2}</p>}
             <p>
-              {order.address.city}, {order.address.state} {order.address.postalCode}
+              {order.address.city}
+              {order.address.state ? `, ${order.address.state}` : ""}
+              {order.address.postalCode ? ` ${order.address.postalCode}` : ""}
             </p>
           </CardContent>
         </Card>
