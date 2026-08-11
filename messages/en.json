@@ -131,7 +131,6 @@
     "invalidCredentials": "Invalid email or password.",
     "noAccount": "Don't have an account?",
     "createOne": "Create one",
-    "demoAccounts": "Demo admin: admin@marwanmohsen.test / Admin123! · Demo customer: customer@marwanmohsen.test / Customer123!",
     "signUpTitle": "Create an account",
     "signUpSubtitle": "Track orders and save your details.",
     "fullName": "Full name",

@@ -131,7 +131,6 @@
     "invalidCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
     "noAccount": "ليس لديك حساب؟",
     "createOne": "أنشئ واحدًا",
-    "demoAccounts": "حساب المشرف التجريبي: admin@marwanmohsen.test / Admin123! · حساب العميل التجريبي: customer@marwanmohsen.test / Customer123!",
     "signUpTitle": "إنشاء حساب",
     "signUpSubtitle": "تتبّع طلباتك واحفظ بياناتك.",
     "fullName": "الاسم الكامل",

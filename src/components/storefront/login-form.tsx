@@ -37,7 +37,7 @@ export function LoginForm() {
       return;
     }
 
-    const callbackUrl = searchParams.get("callbackUrl") ?? `/${locale}/account`;
+    const callbackUrl = searchParams.get("callbackUrl") ?? `/${locale}/shop`;
     router.push(callbackUrl);
     router.refresh();
   }
@@ -68,7 +68,6 @@ export function LoginForm() {
           {t("createOne")}
         </Link>
       </p>
-      <p className="text-center text-xs text-muted-foreground">{t("demoAccounts")}</p>
     </div>
   );
 }

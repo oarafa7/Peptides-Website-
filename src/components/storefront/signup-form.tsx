@@ -34,7 +34,7 @@ export function SignupForm() {
         password: formData.get("password"),
         redirect: false,
       });
-      router.push("/account");
+      router.push("/shop");
       router.refresh();
     }
     return result;
