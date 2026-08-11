@@ -19,9 +19,9 @@ export function Footer() {
           <h3 className="text-sm font-semibold">{t("shop")}</h3>
           <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
             <li><Link href="/shop" className="hover:text-foreground">{tNav("shopAll")}</Link></li>
-            <li><Link href="/collections/protein-mass" className="hover:text-foreground">{t("proteinMass")}</Link></li>
-            <li><Link href="/collections/pre-workout-energy" className="hover:text-foreground">{t("preWorkoutEnergy")}</Link></li>
-            <li><Link href="/collections/vitamins-wellness" className="hover:text-foreground">{t("vitaminsWellness")}</Link></li>
+            <li><Link href="/collections/metabolic" className="hover:text-foreground">{t("metabolic")}</Link></li>
+            <li><Link href="/collections/recovery-repair" className="hover:text-foreground">{t("recoveryRepair")}</Link></li>
+            <li><Link href="/collections/longevity" className="hover:text-foreground">{t("longevity")}</Link></li>
           </ul>
         </div>
 

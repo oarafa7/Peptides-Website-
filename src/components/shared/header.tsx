@@ -32,9 +32,9 @@ export function Header() {
 
   const NAV_LINKS = [
     { href: "/shop", label: t("shopAll") },
-    { href: "/collections/protein-mass", label: t("protein") },
-    { href: "/collections/pre-workout-energy", label: t("preWorkout") },
-    { href: "/collections/vitamins-wellness", label: t("vitamins") },
+    { href: "/collections/metabolic", label: t("metabolic") },
+    { href: "/collections/recovery-repair", label: t("recovery") },
+    { href: "/collections/longevity", label: t("longevity") },
     { href: "/about", label: t("about") },
     { href: "/contact", label: t("contact") },
   ];

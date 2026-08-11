@@ -6,9 +6,9 @@
   },
   "Nav": {
     "shopAll": "تسوّق الكل",
-    "protein": "البروتين وزيادة الكتلة",
-    "preWorkout": "ما قبل التمرين",
-    "vitamins": "الفيتامينات",
+    "metabolic": "الأيض",
+    "recovery": "التعافي والإصلاح",
+    "longevity": "إطالة العمر",
     "about": "من نحن",
     "contact": "تواصل معنا",
     "search": "بحث",
@@ -60,7 +60,10 @@
     "copyright": "© {year} مروان محسن للمكملات. جميع الحقوق محفوظة.",
     "proteinMass": "البروتين وزيادة الكتلة",
     "preWorkoutEnergy": "ما قبل التمرين والطاقة",
-    "vitaminsWellness": "الفيتامينات والعافية"
+    "vitaminsWellness": "الفيتامينات والعافية",
+    "metabolic": "الأيض",
+    "recoveryRepair": "التعافي والإصلاح",
+    "longevity": "إطالة العمر"
   },
   "Product": {
     "addToCart": "أضف إلى السلة",

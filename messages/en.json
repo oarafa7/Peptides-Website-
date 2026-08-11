@@ -6,9 +6,9 @@
   },
   "Nav": {
     "shopAll": "Shop All",
-    "protein": "Protein & Mass",
-    "preWorkout": "Pre-Workout",
-    "vitamins": "Vitamins",
+    "metabolic": "Metabolic",
+    "recovery": "Recovery & Repair",
+    "longevity": "Longevity",
     "about": "About",
     "contact": "Contact",
     "search": "Search",
@@ -60,7 +60,10 @@
     "copyright": "© {year} Marwan Mohsen Supplements. All rights reserved.",
     "proteinMass": "Protein & Mass",
     "preWorkoutEnergy": "Pre-Workout & Energy",
-    "vitaminsWellness": "Vitamins & Wellness"
+    "vitaminsWellness": "Vitamins & Wellness",
+    "metabolic": "Metabolic",
+    "recoveryRepair": "Recovery & Repair",
+    "longevity": "Longevity"
   },
   "Product": {
     "addToCart": "Add to Cart",
