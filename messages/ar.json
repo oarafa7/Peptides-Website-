@@ -206,7 +206,6 @@
     "notFoundTitle": "لم يتم العثور على طلب",
     "backToShop": "العودة إلى المتجر",
     "confirmedTitle": "تم تأكيد الطلب",
-    "receiptSentTo": "تم إرسال الإيصال إلى {email}.",
     "orderReference": "رقم مرجع الطلب: {ref}",
     "summaryTitle": "ملخص الطلب",
     "subtotal": "المجموع الفرعي",
@@ -235,7 +234,8 @@
     "message": "الرسالة",
     "send": "إرسال الرسالة",
     "sent": "تم إرسال الرسالة — سنتواصل معك خلال يوم عمل واحد.",
-    "sentConfirm": "شكرًا — لقد استلمنا رسالتك."
+    "sentConfirm": "شكرًا — لقد استلمنا رسالتك.",
+    "phoneLabel": "اتصل أو واتساب"
   },
   "Policies": {
     "shippingTitle": "الشحن والإرجاع",

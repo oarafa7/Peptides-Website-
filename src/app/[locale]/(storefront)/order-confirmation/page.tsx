@@ -32,8 +32,7 @@ export default async function OrderConfirmationPage({
       <div className="mb-8 flex flex-col items-center text-center">
         <CheckCircle2 className="h-14 w-14 text-primary" />
         <h1 className="mt-4 font-display text-3xl font-semibold">{t("confirmedTitle")}</h1>
-        <p className="mt-2 text-sm text-muted-foreground">{t("receiptSentTo", { email: order.email })}</p>
-        <p className="mt-1 text-xs text-muted-foreground">
+        <p className="mt-2 text-xs text-muted-foreground">
           {t("orderReference", { ref: formatOrderNumber(order.id) })}
         </p>
       </div>

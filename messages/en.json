@@ -206,7 +206,6 @@
     "notFoundTitle": "No order found",
     "backToShop": "Back to shop",
     "confirmedTitle": "Order confirmed",
-    "receiptSentTo": "A receipt has been sent to {email}.",
     "orderReference": "Order reference: {ref}",
     "summaryTitle": "Order Summary",
     "subtotal": "Subtotal",
@@ -235,7 +234,8 @@
     "message": "Message",
     "send": "Send message",
     "sent": "Message sent — we'll be in touch within one business day.",
-    "sentConfirm": "Thanks — we received your message."
+    "sentConfirm": "Thanks — we received your message.",
+    "phoneLabel": "Call or WhatsApp"
   },
   "Policies": {
     "shippingTitle": "Shipping & Returns",
