@@ -442,6 +442,18 @@ async function main() {
     },
   });
 
+  const ownerAdminPassword = await bcrypt.hash("12345678", 10);
+  await prisma.user.upsert({
+    where: { email: "admin@marwanmohsen.com" },
+    update: { passwordHash: ownerAdminPassword, role: Role.ADMIN },
+    create: {
+      name: "Marwan Mohsen",
+      email: "admin@marwanmohsen.com",
+      passwordHash: ownerAdminPassword,
+      role: Role.ADMIN,
+    },
+  });
+
   const customerPassword = await bcrypt.hash("Customer123!", 10);
   await prisma.user.upsert({
     where: { email: "customer@marwanmohsen.test" },
