@@ -16,24 +16,24 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  // BEFORE snapshot — every admin user
+  // Target the live admin user by ID (the omar@ account created on launch day).
+  // The other ADMIN (admin@peptidelab.test) is a seed leftover; leaving it untouched.
+  const TARGET_USER_ID = "cmswa8sow0000la2jfxf30uo2";
+
+  // BEFORE snapshot — every admin user (for audit trail in response)
   const before = await prisma.user.findMany({
     where: { role: "ADMIN" },
     select: { id: true, email: true, name: true, role: true, createdAt: true },
     orderBy: { createdAt: "asc" },
   });
 
-  if (before.length === 0) {
-    return NextResponse.json({ error: "No ADMIN users found", before }, { status: 404 });
-  }
-  if (before.length > 1) {
+  const admin = before.find((u) => u.id === TARGET_USER_ID);
+  if (!admin) {
     return NextResponse.json(
-      { error: "Multiple ADMIN users — refusing to guess which to mutate", before },
-      { status: 409 }
+      { error: `Target admin ${TARGET_USER_ID} not found`, before },
+      { status: 404 }
     );
   }
-
-  const admin = before[0];
   const passwordHash = await bcrypt.hash(NEW_PASSWORD, 10);
 
   // If NEW_EMAIL already exists on a DIFFERENT user, refuse (unique constraint would crash otherwise)
