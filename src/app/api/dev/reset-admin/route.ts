@@ -1,16 +1,14 @@
-// TEMPORARY one-shot maintenance endpoint — reset admin password.
-// Path: /api/dev/reset-admin?key=<SECRET>
-// POST → resets/creates admin user with fresh credentials.
-// Remove this file in a follow-up commit once used.
+// TEMPORARY one-shot maintenance endpoint.
+// Resets the admin identity to mm@mmsupplements.shop with password 12345678
+// for handover. Delete this file immediately after use.
 
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma";
 import bcrypt from "bcryptjs";
-import { Role } from "@prisma/client";
+import { prisma } from "@/lib/prisma";
 
-const SECRET = "s2w75LaWyX-HeqE-DzzzYsfgIEAjAjgJEM04ootyFQI";
-const NEW_EMAIL = "omar@mmsupplements.shop";
-const NEW_PASSWORD = "MMSup2026!Reset";
+const SECRET = "YF30tMh7WN8oHFXQTDcCN8ADaM_1UcVW58mvHuQ8TTs";
+const NEW_EMAIL = "mm@mmsupplements.shop";
+const NEW_PASSWORD = "12345678";
 
 export async function POST(req: NextRequest) {
   const url = new URL(req.url);
@@ -18,42 +16,44 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  // BEFORE snapshot: list current admins so we know the state
+  // BEFORE snapshot — every admin user
   const before = await prisma.user.findMany({
-    where: { role: Role.ADMIN },
-    select: { id: true, email: true, name: true, createdAt: true },
+    where: { role: "ADMIN" },
+    select: { id: true, email: true, name: true, role: true, createdAt: true },
+    orderBy: { createdAt: "asc" },
   });
 
+  if (before.length === 0) {
+    return NextResponse.json({ error: "No ADMIN users found", before }, { status: 404 });
+  }
+  if (before.length > 1) {
+    return NextResponse.json(
+      { error: "Multiple ADMIN users — refusing to guess which to mutate", before },
+      { status: 409 }
+    );
+  }
+
+  const admin = before[0];
   const passwordHash = await bcrypt.hash(NEW_PASSWORD, 10);
 
-  // Upsert the target admin — if exists, update password; else create.
-  const user = await prisma.user.upsert({
-    where: { email: NEW_EMAIL },
-    update: {
-      passwordHash,
-      role: Role.ADMIN,
-      name: "Omar Arafa",
-    },
-    create: {
+  // If NEW_EMAIL already exists on a DIFFERENT user, refuse (unique constraint would crash otherwise)
+  const collision = await prisma.user.findUnique({ where: { email: NEW_EMAIL } });
+  if (collision && collision.id !== admin.id) {
+    return NextResponse.json(
+      { error: `Email ${NEW_EMAIL} already exists on user ${collision.id}`, before },
+      { status: 409 }
+    );
+  }
+
+  const updated = await prisma.user.update({
+    where: { id: admin.id },
+    data: {
       email: NEW_EMAIL,
-      name: "Omar Arafa",
       passwordHash,
-      role: Role.ADMIN,
-      emailVerified: new Date(),
+      name: "MM Supplements Admin",
     },
-    select: { id: true, email: true, role: true, name: true, createdAt: true },
+    select: { id: true, email: true, name: true, role: true, updatedAt: true },
   });
 
-  const after = await prisma.user.findMany({
-    where: { role: Role.ADMIN },
-    select: { id: true, email: true, name: true },
-  });
-
-  return NextResponse.json({
-    beforeAdminCount: before.length,
-    before,
-    user,
-    after,
-    loginWith: { email: NEW_EMAIL, password: NEW_PASSWORD },
-  });
+  return NextResponse.json({ before, updated, note: "Delete this endpoint immediately." });
 }
