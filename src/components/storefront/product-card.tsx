@@ -93,7 +93,7 @@ export function ProductCard({ product }: { product: ProductWithRelations }) {
           {inStock && (
             <button
               onClick={quickAdd}
-              className="absolute inset-x-2 bottom-2 flex translate-y-10 items-center justify-center gap-2 rounded-md bg-foreground/90 py-2 text-xs font-semibold text-background opacity-0 backdrop-blur transition-all duration-200 group-hover:translate-y-0 group-hover:opacity-100"
+              className="absolute inset-x-2 bottom-2 flex translate-y-10 items-center justify-center gap-2 rounded-md bg-foreground/90 py-2 text-xs font-semibold text-background opacity-0 backdrop-blur transition-all duration-200 group-hover:translate-y-0 group-hover:opacity-100 [@media(hover:none)]:translate-y-0 [@media(hover:none)]:opacity-100"
             >
               <ShoppingBag className="h-3.5 w-3.5" /> {t("quickAdd")}
             </button>
@@ -102,7 +102,7 @@ export function ProductCard({ product }: { product: ProductWithRelations }) {
 
         <div className="mt-3 space-y-1">
           <h3 className="text-sm font-medium text-foreground">{product.title}</h3>
-          <div className="flex items-center gap-2 text-sm">
+          <div className="flex flex-wrap items-center gap-x-2 text-sm">
             <span className="font-semibold">{formatPrice(product.priceCents)}</span>
             {isOnSale && (
               <span className="text-muted-foreground line-through">

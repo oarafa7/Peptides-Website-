@@ -17,7 +17,7 @@ export default async function AdminOrderDetailPage({ params }: { params: { id: s
 
   return (
     <div className="max-w-4xl space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <h1 className="font-display text-2xl font-semibold">{formatOrderNumber(order.id)}</h1>
           <p className="text-sm text-muted-foreground">
@@ -36,7 +36,7 @@ export default async function AdminOrderDetailPage({ params }: { params: { id: s
             <CardContent>
               <ul className="divide-y">
                 {order.items.map((item) => (
-                  <li key={item.id} className="flex items-center justify-between py-3 text-sm">
+                  <li key={item.id} className="flex items-center justify-between gap-4 py-3 text-sm">
                     <div>
                       <p className="font-medium">{item.titleSnapshot}</p>
                       <p className="text-muted-foreground">{t("qty", { count: item.quantity })}</p>

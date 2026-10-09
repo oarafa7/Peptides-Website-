@@ -165,7 +165,7 @@ export function ProductForm({ product, categories }: { product: InitialProduct; 
             <Label htmlFor="description">{t("description")}</Label>
             <Textarea id="description" name="description" rows={5} required defaultValue={product?.description} />
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="status">{t("status")}</Label>
               <Select name="status" defaultValue={product?.status ?? "DRAFT"}>
@@ -195,7 +195,7 @@ export function ProductForm({ product, categories }: { product: InitialProduct; 
               </Select>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="price">{t("price")}</Label>
               <Input

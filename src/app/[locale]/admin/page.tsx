@@ -67,12 +67,12 @@ export default async function AdminDashboardPage() {
               <ul className="space-y-3">
                 {stats.topProducts.map((tp, i) =>
                   tp.product ? (
-                    <li key={tp.product.id} className="flex items-center justify-between text-sm">
-                      <span className="flex items-center gap-2">
+                    <li key={tp.product.id} className="flex items-center justify-between gap-4 text-sm">
+                      <span className="flex min-w-0 items-center gap-2">
                         <span className="text-muted-foreground">{i + 1}.</span>
                         {tp.product.title}
                       </span>
-                      <span className="font-medium">{t("sold", { count: tp.unitsSold })}</span>
+                      <span className="shrink-0 font-medium">{t("sold", { count: tp.unitsSold })}</span>
                     </li>
                   ) : null
                 )}
